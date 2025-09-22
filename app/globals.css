@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer components {
+  .btn {
+    @apply bg-secondary text-primary px-6 sm:px-8 py-3 font-bold rounded hover:bg-yellow-600 transition-all duration-300 text-sm sm:text-base;
+  }
+
+  .container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Responsive text utilities */
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl;
+  }
+
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl;
+  }
+
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl;
+  }
+
+  /* Responsive spacing utilities */
+  .section-padding {
+    @apply py-12 sm:py-16 md:py-20;
+  }
+
+  .card-padding {
+    @apply p-4 sm:p-6;
+  }
+
+  /* Prevent layout shifts */
+  .stable-layout {
+    @apply transform-gpu;
+    contain: layout style paint;
+  }
+
+  /* Smooth transitions */
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Image optimization */
+  .optimized-image {
+    @apply transform-gpu;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+@layer utilities {
+  /* Prevent cumulative layout shift */
+  .prevent-cls {
+    contain-intrinsic-size: auto 300px;
+  }
+
+  /* Smooth scrolling */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Hardware acceleration */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}

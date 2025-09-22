@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obituaries - ABF Funeral Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/jpg" href="pictures/logo.jpg">
+    <link rel="shortcut icon" type="image/jpg" href="pictures/logo.jpg">
+    <link rel="apple-touch-icon" href="pictures/logo.jpg">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="pictures/logo.jpg" alt="ABF Funeral Services Logo" class="logo">
+                <div class="logo-text">
+                    <span class="logo-abf">ABF</span>
+                    <h2 class="logo-title">Funeral Services</h2>
+                    <p class="logo-tagline">Reflecting God in Service</p>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="ekijja-omanyi.html">Ekijja Omanyo</a></li>
+                    <li><a href="obituaries.html">Obituaries</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="obituaries-hero" style="background-image: url('pictures/grave.jpg');">
+            <div class="container">
+                <h2>Obituaries & Tributes</h2>
+                <p>Honoring the lives and memories of our loved ones</p>
+            </div>
+        </section>
+
+        <section id="recent-obituaries">
+            <div class="container">
+                <h2>Recent Obituaries</h2>
+                <div class="obituary-list">
+                    <div class="obituary-item">
+                        <h3>John Doe</h3>
+                        <p>Beloved father and grandfather, passed away peacefully on October 1, 2023 at the age of 78. John was a devoted family man who loved spending time with his grandchildren and working in his garden.</p>
+                        <p>Survived by his wife Mary, children Sarah and Michael, and grandchildren Emma and James.</p>
+                        <p>Services will be held at ABF Funeral Home on October 5, 2023 at 2:00 PM.</p>
+                    </div>
+                    <div class="obituary-item">
+                        <h3>Jane Smith</h3>
+                        <p>Dedicated teacher and community member, passed away on September 28, 2023 at the age of 65. Jane touched the lives of countless students during her 30-year teaching career.</p>
+                        <p>Survived by her husband Robert, daughter Lisa, and son David.</p>
+                        <p>A memorial service will be held at First Presbyterian Church on October 8, 2023 at 11:00 AM.</p>
+                    </div>
+                    <div class="obituary-item">
+                        <h3>Robert Johnson</h3>
+                        <p>Devoted husband, father, and longtime community volunteer, passed away on September 25, 2023 at the age of 72. Robert was known for his generosity and commitment to helping others.</p>
+                        <p>Survived by his wife Susan, children Mark and Jennifer, and four grandchildren.</p>
+                        <p>Services will be held at ABF Funeral Home on October 2, 2023 at 1:00 PM.</p>
+                    </div>
+                    <div class="obituary-item">
+                        <h3>Mary Williams</h3>
+                        <p>Loving mother and grandmother, passed away on September 20, 2023 at the age of 85. Mary was known for her warm smile, generous spirit, and delicious homemade pies.</p>
+                        <p>Survived by her children Thomas and Elizabeth, and grandchildren Sarah and Michael.</p>
+                        <p>A celebration of life will be held at her home on October 1, 2023 at 3:00 PM.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="submit-obituary">
+            <div class="container">
+                <h2>Submit an Obituary</h2>
+                <p>If you would like to submit an obituary for a loved one, please contact us or fill out the form below.</p>
+                <form id="obituary-form">
+                    <label for="name">Name of Deceased:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age">
+
+                    <label for="date-of-death">Date of Death:</label>
+                    <input type="date" id="date-of-death" name="date-of-death">
+
+                    <label for="obituary-text">Obituary Text:</label>
+                    <textarea id="obituary-text" name="obituary-text" rows="10" required></textarea>
+
+                    <label for="submitter-name">Your Name:</label>
+                    <input type="text" id="submitter-name" name="submitter-name" required>
+
+                    <label for="submitter-email">Your Email:</label>
+                    <input type="email" id="submitter-email" name="submitter-email" required>
+
+                    <button type="submit" class="btn">Submit Obituary</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>ABF Funeral Services - Compassionate Care Since 1973</p>
+            <p>Phone: (555) 123-4567 | Emergency: (555) 123-4568</p>
+            <p>Address: 123 Main Street, City, State 12345</p>
+            <p>&copy; 2023 ABF Funeral Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
