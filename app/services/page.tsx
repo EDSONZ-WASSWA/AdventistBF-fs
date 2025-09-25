@@ -73,6 +73,140 @@ export default function Services() {
             </div>
           </div>
         </section>
+
+        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>Comprehensive Funeral Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+                <h3 className="text-2xl font-bold mb-6 text-secondary">Core Services</h3>
+                <ul className="space-y-4 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Funeral home</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Body Storage as requested</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Embalming services & beauty works</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Death announcements & awareness creation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Executive coffins & caskets</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Executive transport for body and bereaved family</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Pole bearers</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Wears for bereaved family</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Free professional advice</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Order of Service</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Body tent</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Choirs & Soft music</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Condolence cards</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Counseling & depression management services</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Coordination of religious services of any faith</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Postmortem (if required)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Repatriation (if required)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">PA system</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+                <h3 className="text-2xl font-bold mb-6 text-secondary">Additional Services</h3>
+                <ul className="space-y-4 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Tents & Chairs</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Sale of funeral equipment</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Brass band</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Hope trumpet</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Piano services</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Videographer & photo album</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Catering services</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Grave finishing</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Wills management</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Exhuming</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-secondary mr-3 mt-1">✓</span>
+                    <span className="leading-relaxed">Mobile toilet</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

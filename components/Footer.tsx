@@ -36,6 +36,14 @@ export default function Footer() {
                 <p className="font-semibold text-red-400">🚨 Emergency</p>
                 <p className="text-gray-300">+256 709 727 832</p>
               </div>
+              <div className="text-xs">
+                <p className="font-semibold text-green-400">📧 Email</p>
+                <a href="mailto:adventistbusinessfriends2022@gmail.com" className="text-gray-300 hover:text-white transition-colors">adventistbusinessfriends2022@gmail.com</a>
+              </div>
+              <div className="text-xs">
+                <p className="font-semibold text-green-400">📱 WhatsApp</p>
+                <a href="https://wa.me/256776514528" className="text-gray-300 hover:text-white transition-colors">+256 776 514528</a>
+              </div>
             </div>
           </div>
           <div className="lg:col-span-1 text-center lg:text-left">
@@ -68,6 +76,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-700 mt-4 pt-3 text-center">
           <p className="text-xs">&copy; 2025 ABF Funeral Services. All rights reserved.</p>
+          <p className="text-sm mt-1 font-medium text-secondary">@enock-kalumba</p>
         </div>
       </div>
     </footer>

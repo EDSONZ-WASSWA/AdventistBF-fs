@@ -3,6 +3,43 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
 import { backgroundImages } from '@/lib/carouselImages'
+import { redirect } from 'next/navigation'
+
+async function submitForm(formData: FormData) {
+    'use server'
+
+    const fullName = formData.get('full-name') as string
+    const phone = formData.get('phone') as string
+    const email = formData.get('email') as string
+    const preferredPlan = formData.get('preferred-plan') as string
+    const paymentMethod = formData.get('payment-method') as string
+    const additionalInfo = formData.get('additional-info') as string
+
+    const web3FormData = new FormData()
+    web3FormData.append('access_key', process.env.WEB3FORMS_ACCESS_KEY!)
+    web3FormData.append('to', 'enockkalumba213@gmail.com')
+    web3FormData.append('from', 'noreply@abf-funeral-services.com')
+    web3FormData.append('subject', 'New Ekijja Omanyi Application')
+    web3FormData.append('full-name', fullName)
+    web3FormData.append('phone', phone)
+    web3FormData.append('email', email)
+    web3FormData.append('preferred-plan', preferredPlan)
+    web3FormData.append('payment-method', paymentMethod)
+    web3FormData.append('additional-info', additionalInfo)
+
+    const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: web3FormData
+    })
+
+    const result = await response.json();
+
+    if (!result.success) {
+        throw new Error('Failed to submit application')
+    }
+
+    // Form will clear automatically
+}
 
 const membershipSteps = [
   'Study the funding packages and choose your favourite.',
@@ -58,7 +95,7 @@ export default function EkijjaOmanyi() {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-12 text-primary">What is Ekijja Omanyi saving Scheme?</h2>
+            <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>What is Ekijja Omanyi saving Scheme?</h2>
             <div className="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
               <p className="mb-6">
                 Ekijja Omanyi Saving Scheme Is an extension project of ABF Funeral Services. It is an arrangement of precautionary saving for hard times code-named; "Ekijja Omanyi" (kinyaga bitono).
@@ -73,7 +110,7 @@ export default function EkijjaOmanyi() {
 
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">How to Become a Member of Ekijja Omanyi Saving Scheme</h2>
+            <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>How to Become a Member of Ekijja Omanyi Saving Scheme</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
               Joining our saving scheme is simple and straightforward. Follow these easy steps to secure your family's future.
             </p>
@@ -100,13 +137,13 @@ export default function EkijjaOmanyi() {
             </div>
 
             <div className="text-center mt-16">
-              <h3 className="text-2xl font-bold mb-6 text-primary">Ready to Join?</h3>
+              <h3 className="text-2xl font-bold mb-6" style={{color: '#1030e6'}}>Ready to Join?</h3>
               <p className="text-lg text-gray-600 mb-8">Take the first step towards securing your family's future. Contact us today to start your membership application.</p>
               <div className="space-x-4">
                 <Link href="#saving-application" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300 inline-block">
                   Apply Online
                 </Link>
-                <Link href="/contact" className="bg-secondary text-white px-8 py-3 rounded-md hover:bg-secondary-dark transition-colors duration-300 inline-block">
+                <Link href="https://wa.me/256776514528" target="_blank" rel="noopener noreferrer" className="bg-secondary text-white px-8 py-3 rounded-md hover:bg-secondary-dark transition-colors duration-300 inline-block">
                   Contact Us
                 </Link>
               </div>
@@ -116,7 +153,7 @@ export default function EkijjaOmanyi() {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Saving Plan Options</h2>
+            <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Saving Plan Options</h2>
 
             <div className="overflow-x-auto">
               <table className="w-full bg-white shadow-lg rounded-lg overflow-hidden">
@@ -145,7 +182,7 @@ export default function EkijjaOmanyi() {
 
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Benefits of Ekijja Omanyo</h2>
+            <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Benefits of Ekijja Omanyo</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {benefits.map((benefit, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center">
@@ -157,52 +194,65 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-8 text-primary">Online Payment Options</h2>
-            <p className="text-center text-lg text-gray-600 mb-12">Make secure and convenient payments using mobile money services. We accept payments through all major mobile money platforms.</p>
+            <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Online Payment Options</h2>
+            <p className="text-center text-lg text-gray-600 mb-12">Make your payments securely and conveniently through our various payment channels.</p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-4 text-secondary">Mobile Money Payment</h3>
-                <p className="text-gray-600 mb-4">Pay instantly using your mobile phone</p>
-                <div className="bg-gray-100 p-4 rounded-md">
-                  <p className="font-semibold mb-2">Payment Details:</p>
-                  <p>Business Name: ABF Funeral Services</p>
-                  <p>Account: Ekijja Omanyi Scheme</p>
+                <p className="text-gray-600 mb-4">Instant payments via mobile money</p>
+                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg shadow-md border border-green-200">
+                  <p className="font-semibold text-base mb-4 text-primary">📱 Mobile Money Details:</p>
+                  <ul className="list-disc list-inside space-y-1 text-sm">
+                    <li>MTN Mobile Money (*165*3#)</li>
+                    <li>Airtel Money (*185*9#)</li>
+                    <li>Enter merchant code number <strong>609750</strong> (MTN) and <strong>1199015</strong> (Airtel)</li>
+                    <li>Enter Amount your paying</li>
+                    <li>Enter reference (package type)</li>
+                    <li>Enter your PIN to complete transaction</li>
+                  </ul>
                 </div>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-bold mb-4 text-secondary">Payment Instructions</h3>
-                <ol className="list-decimal list-inside space-y-2 text-gray-600 text-sm">
-                  <li>Select your preferred mobile money service</li>
-                  <li>Dial *165*3# (MTN), *185*9# (Airtel)</li>
-                  <li>Enter merchant code number 609750 (MTN), 1199015 (Airtel)</li>
-                  <li>Enter Amount your paying</li>
-                  <li>Enter Account reference (saver's name)</li>
-                  <li>Confirm payment with your PIN</li>
-                  <li>Receive confirmation SMS</li>
-                </ol>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-4 text-secondary">Bank Transfer</h3>
-                <p className="text-gray-600 mb-4">For larger payments or direct bank transfers</p>
-                <div className="bg-gray-100 p-4 rounded-md">
-                  <p className="font-semibold mb-2">Bank Details:</p>
-                  <p>Bank: Centenary Bank</p>
-                  <p>Account Name: ABF Funeral Services Ltd</p>
-                  <p>Account Number: 1234567890</p>
-                  <p>Swift Code: CERBUGKA</p>
+                <p className="text-gray-600 mb-4">Direct bank transfers for larger amounts</p>
+                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg shadow-md border border-blue-200">
+                  <p className="font-semibold text-base mb-4 text-primary">🏦 Bank Details:</p>
+                  <div className="space-y-2">
+                    <p className="text-sm"><span className="font-medium text-gray-700">BANK:</span> <span className="text-secondary">CENTENARY BANK – ENTEBBE RD BRANCH</span></p>
+                    <p className="text-sm"><span className="font-medium text-gray-700">ABF ACCOUNT NAME:</span> <span className="text-secondary">ADVENTIST BUSINESS FRIENDS LTD</span></p>
+                    <p className="text-sm"><span className="font-medium text-gray-700">ABF ACCOUNT NO:</span> <span className="text-secondary">3100075872</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-bold mb-4 text-secondary">Cash Payment</h3>
+                <p className="text-gray-600 mb-4">Visit our office for cash payments</p>
+                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg shadow-md border border-yellow-200">
+                  <p className="font-semibold text-base mb-4 text-primary">💰 Cash Payment Details:</p>
+                  <div className="space-y-2">
+                    <p className="text-sm"><span className="font-medium text-gray-700">Office Hours:</span></p>
+                    <ul className="list-disc list-inside space-y-1 text-sm ml-4">
+                      <li>Sunday - Sunday: 9:00 AM - 6:00 PM</li>
+                    </ul>                 
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-16 bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-              <h3 className="text-2xl font-bold text-blue-800 mb-4">Payment Confirmation</h3>
-              <p className="text-lg mb-4">After making payment, please send confirmation details to:</p>
-              <p className="text-xl font-bold text-secondary">+256 414 123 456</p>
+            <div className="mt-16 bg-yellow-50 border border-yellow-200 rounded-lg p-8 text-center">
+              <h3 className="text-2xl font-bold text-yellow-800 mb-4">Payment Confirmation</h3>
+              <p className="text-lg mb-4">After making any payment, please send confirmation to:</p>
+              <a href="https://wa.me/256776514528" target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white px-8 py-3 rounded-md hover:bg-green-600 transition-colors duration-300 inline-flex items-center mx-auto">
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                </svg>
+                +256 776 514528
+              </a>
               <p className="text-sm mt-4">Include: Transaction ID, Amount, Date, and Your Name</p>
             </div>
           </div>
@@ -210,13 +260,13 @@ export default function EkijjaOmanyi() {
 
         <section id="saving-application" className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-8 text-primary">Join Ekijja Omanyo Today</h2>
+            <h2 className="text-4xl font-bold text-center mb-8" style={{color: '#1030e6'}}>Join Ekijja Omanyo Today</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
               Take the first step towards securing your family's future. Contact us to learn more about our saving scheme and find the plan that's right for you.
             </p>
 
             <div className="max-w-2xl mx-auto">
-              <form className="bg-white p-8 rounded-lg shadow-lg space-y-6">
+              <form action={submitForm} className="bg-white p-8 rounded-lg shadow-lg space-y-6">
                 <div>
                   <label htmlFor="full-name" className="block text-sm font-medium text-gray-700 mb-2">Full Name:</label>
                   <input type="text" id="full-name" name="full-name" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
@@ -254,8 +304,6 @@ export default function EkijjaOmanyi() {
                     <option value="">Select payment method</option>
                     <option value="mtn">MTN Mobile Money</option>
                     <option value="airtel">Airtel Money</option>
-                    <option value="africell">Africell Money</option>
-                    <option value="utl">UTL Mobile Money</option>
                     <option value="bank">Bank Transfer</option>
                     <option value="cash">Cash Payment</option>
                   </select>

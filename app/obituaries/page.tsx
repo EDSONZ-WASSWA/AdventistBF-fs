@@ -2,6 +2,43 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
 import { backgroundImages } from '@/lib/carouselImages'
+import { redirect } from 'next/navigation'
+
+async function submitObituaryForm(formData: FormData) {
+    'use server'
+
+    const name = formData.get('name') as string
+    const age = formData.get('age') as string
+    const dateOfDeath = formData.get('date-of-death') as string
+    const obituaryText = formData.get('obituary-text') as string
+    const submitterName = formData.get('submitter-name') as string
+    const submitterEmail = formData.get('submitter-email') as string
+
+    const web3FormData = new FormData()
+    web3FormData.append('access_key', process.env.WEB3FORMS_ACCESS_KEY!)
+    web3FormData.append('to', 'enockkalumba213@gmail.com')
+    web3FormData.append('from', 'noreply@abf-funeral-services.com')
+    web3FormData.append('subject', 'New Obituary Submission')
+    web3FormData.append('name', name)
+    web3FormData.append('age', age)
+    web3FormData.append('date-of-death', dateOfDeath)
+    web3FormData.append('obituary-text', obituaryText)
+    web3FormData.append('submitter-name', submitterName)
+    web3FormData.append('submitter-email', submitterEmail)
+
+    const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: web3FormData
+    })
+
+    const result = await response.json()
+
+    if (!result.success) {
+        throw new Error('Failed to submit obituary')
+    }
+
+    // Form will clear automatically
+}
 
 const obituaries = [
   {
@@ -53,7 +90,7 @@ export default function Obituaries() {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Recent Obituaries</h2>
+            <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Recent Obituaries</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {obituaries.map((obituary, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -88,12 +125,12 @@ export default function Obituaries() {
 
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Submit an Obituary</h2>
+            <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Submit an Obituary</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
               If you would like to submit an obituary for a loved one, please contact us or fill out the form below.
             </p>
             <div className="max-w-2xl mx-auto">
-              <form className="space-y-6">
+              <form action={submitObituaryForm} className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-lg shadow-lg border border-gray-200 space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name of Deceased:</label>
                   <input type="text" id="name" name="name" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
@@ -122,7 +159,7 @@ export default function Obituaries() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <button type="submit" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300">Submit Obituary</button>
+                  <button type="submit" className="bg-secondary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300">Submit Obituary</button>
                 </div>
               </form>
             </div>

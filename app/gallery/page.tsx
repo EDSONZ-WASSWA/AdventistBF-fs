@@ -61,7 +61,7 @@ export default function Gallery() {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Photo Gallery</h2>
+            <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Photo Gallery</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
               Explore our facilities, services, and the compassionate care we provide to families during their time of need.
             </p>
@@ -88,7 +88,7 @@ export default function Gallery() {
 
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl font-bold mb-8 text-primary">Our Facilities & Services</h2>
+            <h2 className="text-4xl font-bold mb-8" style={{color: '#1030e6'}}>Our Facilities & Services</h2>
             <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
               Our gallery showcases the comprehensive range of services we offer, from traditional funeral ceremonies to modern memorial services.
               We are committed to providing dignified, compassionate care that honors the memory of your loved ones.
