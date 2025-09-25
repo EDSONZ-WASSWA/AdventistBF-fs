@@ -21,11 +21,11 @@ export default function Header() {
                className="rounded-full mr-2 sm:mr-3 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
              />
              <div className="flex flex-col">
-               <span className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ color: '#0BA6DF', letterSpacing: '0.25rem sm:0.5rem md:0.75rem' }}>ABF</span>
+               <span className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{ color: '#1030e6', letterSpacing: '0.25rem sm:0.5rem md:0.75rem' }}>ABF</span>
                <h2 className="text-lg sm:text-xl font-bold tracking-wide" style={{ color: '#C59560' }}>
                  Funeral Services
                </h2>
-               <p className="text-xs sm:text-sm font-medium italic" style={{ color: '#0BA6DF', marginTop: '1px sm:2px' }}>
+               <p className="text-xs sm:text-sm font-medium italic" style={{ color: '#1030e6', marginTop: '1px sm:2px' }}>
                  Reflecting God in Service
                </p>
              </div>

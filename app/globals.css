@@ -82,4 +82,14 @@
     backface-visibility: hidden;
     perspective: 1000px;
   }
+
+  /* Sliding animation */
+  @keyframes slide {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-slide {
+    animation: slide 30s linear infinite;
+  }
 }
