@@ -53,10 +53,10 @@ export default function Obituaries() {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Recent Obituaries</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-primary" style={{color:'#264fa0'}}>Recent Obituaries</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {obituaries.map((obituary, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div key={index} className="bg-blue-50 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 card-hover">
                   <div className="md:flex">
                     <div className="md:w-1/3 p-4 flex items-center justify-center">
                       <div className="relative group">
@@ -86,43 +86,43 @@ export default function Obituaries() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50" style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Submit an Obituary</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-primary" style={{color:'#264fa0'}}>Submit an Obituary</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
               If you would like to submit an obituary for a loved one, please contact us or fill out the form below.
             </p>
-            <div className="max-w-2xl mx-auto">
-              <form className="space-y-6">
+            <div className="max-w-2xl mx-auto  border border-blue-200 rounded-lg px-4">
+              <form className="space-y-6 bg-blue-50">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name of Deceased:</label>
-                  <input type="text" id="name" name="name" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
+                  <label htmlFor="name" className="block text-sm font-bold text-black-700 mb-2">Name of Deceased:</label>
+                  <input type="text" id="name" name="name" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
                 </div>
                 <div>
-                  <label htmlFor="age" className="block text-sm font-medium text-gray-700 mb-2">Age:</label>
-                  <input type="number" id="age" name="age" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
+                  <label htmlFor="age" className="block text-sm font-bold text-black-700 mb-2">Age:</label>
+                  <input type="number" id="age" name="age" className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
                 </div>
                 <div>
-                  <label htmlFor="date-of-death" className="block text-sm font-medium text-gray-700 mb-2">Date of Death:</label>
-                  <input type="date" id="date-of-death" name="date-of-death" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
+                  <label htmlFor="date-of-death" className="block text-sm font-bold text-black-700 mb-2">Date of Death:</label>
+                  <input type="date" id="date-of-death" name="date-of-death" className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
                 </div>
 
                 <div>
-                  <label htmlFor="obituary-text" className="block text-sm font-medium text-gray-700 mb-2">Obituary Text:</label>
-                  <textarea id="obituary-text" name="obituary-text" rows={10} required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                  <label htmlFor="obituary-text" className="block text-sm font-bold text-black-700 mb-2">Obituary Text:</label>
+                  <textarea id="obituary-text" name="obituary-text" rows={10} required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="submitter-name" className="block text-sm font-medium text-gray-700 mb-2">Your Name:</label>
-                    <input type="text" id="submitter-name" name="submitter-name" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
+                    <label htmlFor="submitter-name" className="block text-sm font-bold text-black-700 mb-2">Your Name:</label>
+                    <input type="text" id="submitter-name" name="submitter-name" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
                   </div>
                   <div>
-                    <label htmlFor="submitter-email" className="block text-sm font-medium text-gray-700 mb-2">Your Email:</label>
-                    <input type="email" id="submitter-email" name="submitter-email" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
+                    <label htmlFor="submitter-email" className="block text-sm font-bold text-black-700 mb-2">Your Email:</label>
+                    <input type="email" id="submitter-email" name="submitter-email" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
                   </div>
                 </div>
                 <div className="text-center">
-                  <button type="submit" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300">Submit Obituary</button>
+                  <button type="submit" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300 card-hover">Submit Obituary</button>
                 </div>
               </form>
             </div>

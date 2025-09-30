@@ -45,7 +45,7 @@ const galleryImages = [
 
 export default function Gallery() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" >
       <Header />
       <main className="pt-32 sm:pt-24 md:pt-20">
         <BackgroundCarousel
@@ -59,9 +59,9 @@ export default function Gallery() {
           </div>
         </BackgroundCarousel>
 
-        <section className="py-20">
+        <section className="py-20" style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Photo Gallery</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-primary" style={{color:'#264fa0'}}>Photo Gallery</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
               Explore our facilities, services, and the compassionate care we provide to families during their time of need.
             </p>
@@ -86,16 +86,16 @@ export default function Gallery() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section className="py-20"style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl font-bold mb-8 text-primary">Our Facilities & Services</h2>
+            <h2 className="text-4xl font-bold mb-8 text-primary" style={{color:'#264fa0'}}>Our Facilities & Services</h2>
             <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
               Our gallery showcases the comprehensive range of services we offer, from traditional funeral ceremonies to modern memorial services.
               We are committed to providing dignified, compassionate care that honors the memory of your loved ones.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-              <div className="bg-white p-8 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-8 rounded-lg shadow-lg card-hover">
                 <h3 className="text-2xl font-bold mb-4 text-secondary">Funeral Home</h3>
                 <p className="text-gray-600 mb-4">A comfortable and dignified space for visitations and memorial services.</p>
                 <ul className="text-left text-gray-600 space-y-2">
@@ -106,7 +106,7 @@ export default function Gallery() {
                 </ul>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-8 rounded-lg shadow-lg card-hover">
                 <h3 className="text-2xl font-bold mb-4 text-secondary">Transportation</h3>
                 <p className="text-gray-600 mb-4">Professional and respectful transportation services for all occasions.</p>
                 <ul className="text-left text-gray-600 space-y-2">
@@ -117,7 +117,7 @@ export default function Gallery() {
                 </ul>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-8 rounded-lg shadow-lg card-hover">
                 <h3 className="text-2xl font-bold mb-4 text-secondary">Cemetery Services</h3>
                 <p className="text-gray-600 mb-4">Beautiful and well-maintained cemetery facilities for final arrangements.</p>
                 <ul className="text-left text-gray-600 space-y-2">

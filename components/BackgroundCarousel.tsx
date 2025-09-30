@@ -30,7 +30,7 @@ export default function BackgroundCarousel({
 
   return (
     <section
-      className={`relative flex items-center justify-center text-white overflow-hidden stable-layout gpu-accelerated ${className}`}
+      className={`relative flex items-center justify-center text-white overflow-hidden  ${className}`}
       style={{
         backgroundImage: `url("${images[currentImageIndex]}")`,
         backgroundSize: 'cover',
@@ -38,7 +38,6 @@ export default function BackgroundCarousel({
         backgroundRepeat: 'no-repeat',
         transition: 'background-image 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
         willChange: 'background-image',
-        containIntrinsicSize: 'auto 300px'
       }}
     >
       {/* Preload all images to prevent loading delays and layout shifts */}

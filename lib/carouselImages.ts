@@ -32,10 +32,10 @@ export const backgroundImages = [
 
 // Alternative smaller set for faster loading
 export const heroImages = [
-  '/pictures/abf home.jpg',
-  '/pictures/funeral home.jpg',
-  '/pictures/serving team ABF.jpg',
-  '/pictures/team.jpg'
+  '/pictures/eli-solitas-q6e4zwgtUcM-unsplash.jpg',
+  '/pictures/candle.jpg',
+  '/pictures/candle2.jpg',
+  '/pictures/candles1.jpg'
 ]
 
 // Service-specific images

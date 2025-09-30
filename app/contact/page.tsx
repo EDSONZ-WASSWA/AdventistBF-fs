@@ -21,7 +21,7 @@ export default function Contact() {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Get In Touch</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-primary" style={{color:'#264fa0'}}>Get In Touch</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <h3 className="text-2xl font-bold mb-4 text-secondary">Phone</h3>
@@ -46,11 +46,11 @@ export default function Contact() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50" style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Send Us a Message</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-primary" style={{color:'#264fa0'}}>Send Us a Message</h2>
             <div className="max-w-2xl mx-auto">
-              <form className="space-y-6">
+              <form className="space-y-6 border border-blue-100 rounded-lg px-4" >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="first-name" className="block text-sm font-medium text-gray-700 mb-2">First Name:</label>
@@ -85,7 +85,7 @@ export default function Contact() {
                   <textarea id="message" name="message" rows={6} required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
                 </div>
                 <div className="text-center">
-                  <button type="submit" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300">Send Message</button>
+                  <button type="submit" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300 card-hover">Send Message</button>
                 </div>
               </form>
             </div>
@@ -94,7 +94,7 @@ export default function Contact() {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Our Locations</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-primary" style={{color:'#264fa0'}}>Our Locations</h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
               <div>
@@ -129,10 +129,10 @@ export default function Contact() {
             </div>
 
             <div className="text-center">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Directions & Accessibility</h3>
+              <h3 className="text-2xl font-bold mb-4 text-primary" style={{color:'#264fa0'}}>Directions & Accessibility</h3>
               <p className="text-lg text-gray-600 mb-4">ABF Funeral Services is conveniently located and easily accessible from major highways and public transportation.</p>
               <p className="text-lg text-gray-600 mb-8">Free parking is available on-site for your convenience.</p>
-              <div className="bg-gray-50 p-6 rounded-lg inline-block">
+              <div className="bg-blue-50 p-6 rounded-lg inline-block  border border-blue-900">
                 <p className="text-gray-700 font-semibold">📍 Easy Access Points:</p>
                 <ul className="text-left mt-2 text-gray-600">
                   <li>• Main highways and arterial roads</li>

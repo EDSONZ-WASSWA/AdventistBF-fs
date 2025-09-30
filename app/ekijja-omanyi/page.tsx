@@ -58,7 +58,7 @@ export default function EkijjaOmanyi() {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-12 text-primary">What is Ekijja Omanyi saving Scheme?</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 text-primary"  style={{color:'#264fa0'}}>What is Ekijja Omanyi saving Scheme?</h2>
             <div className="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
               <p className="mb-6">
                 Ekijja Omanyi Saving Scheme Is an extension project of ABF Funeral Services. It is an arrangement of precautionary saving for hard times code-named; "Ekijja Omanyi" (kinyaga bitono).
@@ -71,24 +71,24 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 " style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">How to Become a Member of Ekijja Omanyi Saving Scheme</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-primary"  style={{color:'#264fa0'}}>How to Become a Member of Ekijja Omanyi Saving Scheme</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
               Joining our saving scheme is simple and straightforward. Follow these easy steps to secure your family's future.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
               {membershipSteps.map((step, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
+                <div key={index} className="bg-blue-50 p-6 rounded-lg shadow-lg  card-hover">
                   <h3 className="text-xl font-bold mb-4 text-secondary">Step {index + 1}:</h3>
                   <p className="text-gray-600">{step}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-16 bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold text-center mb-8 text-secondary">Required Documents</h3>
+            <div className="mt-16 bg-blue-50 p-8 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold text-center mb-8 text-secondary"  style={{color:'#264fa0'}}>Required Documents</h3>
               <ul className="list-disc list-inside space-y-2 text-gray-700 max-w-2xl mx-auto">
                 <li>Valid National ID or Passport</li>
                 <li>Recent passport-sized photographs (2 copies)</li>
@@ -100,13 +100,13 @@ export default function EkijjaOmanyi() {
             </div>
 
             <div className="text-center mt-16">
-              <h3 className="text-2xl font-bold mb-6 text-primary">Ready to Join?</h3>
+              <h3 className="text-2xl font-bold mb-6 text-primary"  style={{color:'#264fa0'}}>Ready to Join?</h3>
               <p className="text-lg text-gray-600 mb-8">Take the first step towards securing your family's future. Contact us today to start your membership application.</p>
               <div className="space-x-4">
-                <Link href="#saving-application" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300 inline-block">
+                <Link href="#saving-application" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300 inline-block card-hover">
                   Apply Online
                 </Link>
-                <Link href="/contact" className="bg-secondary text-white px-8 py-3 rounded-md hover:bg-secondary-dark transition-colors duration-300 inline-block">
+                <Link href="/contact" className="bg-secondary text-white px-8 py-3 rounded-md hover:bg-secondary-dark transition-colors duration-300 inline-block card-hover">
                   Contact Us
                 </Link>
               </div>
@@ -116,21 +116,21 @@ export default function EkijjaOmanyi() {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Saving Plan Options</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-primary" style={{color:'#264fa0'}}>Saving Plan Options</h2>
 
             <div className="overflow-x-auto">
-              <table className="w-full bg-white shadow-lg rounded-lg overflow-hidden">
-                <thead className="bg-black text-white">
+              <table className="w-full border-4 border-[#264fa0] shadow-lg rounded-lg overflow-hidden">
+                <thead className="bg-[#264fa0] text-[#E6F7FF]">
                   <tr>
-                    <th className="px-6 py-4 text-left text-lg font-semibold">Plan Type</th>
-                    <th className="px-6 py-4 text-left text-lg font-semibold">Duration</th>
-                    <th className="px-6 py-4 text-left text-lg font-semibold">Monthly Contribution</th>
-                    <th className="px-6 py-4 text-left text-lg font-semibold">Total Coverage</th>
+                    <th className="px-6 py-4 text-left text-lg font-semibold" style={{color:'#E6F7FF'}}>Plan Type</th>
+                    <th className="px-6 py-4 text-left text-lg font-semibold" style={{color:'#E6F7FF'}}>Duration</th>
+                    <th className="px-6 py-4 text-left text-lg font-semibold" style={{color:'#E6F7FF'}}>Monthly Contribution</th>
+                    <th className="px-6 py-4 text-left text-lg font-semibold" style={{color:'#E6F7FF'}}>Total Coverage</th>
                   </tr>
                 </thead>
                 <tbody>
                   {savingPlans.map((plan, index) => (
-                    <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                    <tr key={index} className={index % 2 === 0 ? 'bg-[#E6F7FF] hover:bg-blue-100' : 'bg-white hover:bg-blue-50'}>
                       <td className="px-6 py-4 font-semibold text-secondary">{plan.name}</td>
                       <td className="px-6 py-4">{plan.duration}</td>
                       <td className="px-6 py-4">{plan.monthly}</td>
@@ -143,12 +143,12 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section className="py-20" style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-16 text-primary">Benefits of Ekijja Omanyo</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 text-primary"  style={{color:'#264fa0'}}>Benefits of Ekijja Omanyo</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {benefits.map((benefit, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center">
+                <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center card-hover">
                   <h3 className="text-xl font-bold mb-4 text-secondary">{benefit.title}</h3>
                   <p className="text-gray-600">{benefit.description}</p>
                 </div>
@@ -159,11 +159,11 @@ export default function EkijjaOmanyi() {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-8 text-primary">Online Payment Options</h2>
+            <h2 className="text-4xl font-bold text-center mb-8 text-primary" style={{color:'#264fa0'}}>Online Payment Options</h2>
             <p className="text-center text-lg text-gray-600 mb-12">Make secure and convenient payments using mobile money services. We accept payments through all major mobile money platforms.</p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-6 rounded-lg shadow-lg card-hover">
                 <h3 className="text-xl font-bold mb-4 text-secondary">Mobile Money Payment</h3>
                 <p className="text-gray-600 mb-4">Pay instantly using your mobile phone</p>
                 <div className="bg-gray-100 p-4 rounded-md">
@@ -173,7 +173,7 @@ export default function EkijjaOmanyi() {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-6 rounded-lg shadow-lg card-hover">
                 <h3 className="text-xl font-bold mb-4 text-secondary">Payment Instructions</h3>
                 <ol className="list-decimal list-inside space-y-2 text-gray-600 text-sm">
                   <li>Select your preferred mobile money service</li>
@@ -186,7 +186,7 @@ export default function EkijjaOmanyi() {
                 </ol>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-6 rounded-lg shadow-lg card-hover">
                 <h3 className="text-xl font-bold mb-4 text-secondary">Bank Transfer</h3>
                 <p className="text-gray-600 mb-4">For larger payments or direct bank transfers</p>
                 <div className="bg-gray-100 p-4 rounded-md">
@@ -200,7 +200,7 @@ export default function EkijjaOmanyi() {
             </div>
 
             <div className="mt-16 bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-              <h3 className="text-2xl font-bold text-blue-800 mb-4">Payment Confirmation</h3>
+              <h3 className="text-2xl font-bold  mb-4">Payment Confirmation</h3>
               <p className="text-lg mb-4">After making payment, please send confirmation details to:</p>
               <p className="text-xl font-bold text-secondary">+256 414 123 456</p>
               <p className="text-sm mt-4">Include: Transaction ID, Amount, Date, and Your Name</p>
@@ -208,34 +208,34 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section id="saving-application" className="py-20 bg-gray-50">
+        <section id="saving-application" className="py-20 bg-gray-50" style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-8 text-primary">Join Ekijja Omanyo Today</h2>
+            <h2 className="text-4xl font-bold text-center mb-8 text-primary"  style={{color:'#264fa0'}}>Join Ekijja Omanyo Today</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
               Take the first step towards securing your family's future. Contact us to learn more about our saving scheme and find the plan that's right for you.
             </p>
 
             <div className="max-w-2xl mx-auto">
-              <form className="bg-white p-8 rounded-lg shadow-lg space-y-6">
+              <form className="bg-blue-50 p-8 rounded-lg shadow-lg space-y-6 border border-blue-200">
                 <div>
                   <label htmlFor="full-name" className="block text-sm font-medium text-gray-700 mb-2">Full Name:</label>
-                  <input type="text" id="full-name" name="full-name" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
+                  <input type="text" id="full-name" name="full-name" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
+                    <input type="tel" id="phone" name="phone" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address:</label>
-                    <input type="email" id="email" name="email" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
+                    <input type="email" id="email" name="email" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="preferred-plan" className="block text-sm font-medium text-gray-700 mb-2">Preferred Plan:</label>
-                  <select id="preferred-plan" name="preferred-plan" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                  <select id="preferred-plan" name="preferred-plan" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
                     <option value="">Select a plan</option>
                     <option value="royal">Royal Package (15,000,000)</option>
                     <option value="executive">Executive Package (8,000,000)</option>
@@ -250,7 +250,7 @@ export default function EkijjaOmanyi() {
 
                 <div>
                   <label htmlFor="payment-method" className="block text-sm font-medium text-gray-700 mb-2">Preferred Payment Method:</label>
-                  <select id="payment-method" name="payment-method" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                  <select id="payment-method" name="payment-method" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
                     <option value="">Select payment method</option>
                     <option value="mtn">MTN Mobile Money</option>
                     <option value="airtel">Airtel Money</option>
@@ -263,11 +263,11 @@ export default function EkijjaOmanyi() {
 
                 <div>
                   <label htmlFor="additional-info" className="block text-sm font-medium text-gray-700 mb-2">Additional Information:</label>
-                  <textarea id="additional-info" name="additional-info" rows={4} placeholder="Any questions or special requirements..." className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                  <textarea id="additional-info" name="additional-info" rows={4} placeholder="Any questions or special requirements..." className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
                 </div>
 
                 <div className="text-center">
-                  <button type="submit" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300">Apply Now</button>
+                  <button type="submit" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300 card-hover">Apply Now</button>
                 </div>
               </form>
             </div>
