@@ -2,7 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
-import { backgroundImages } from '@/lib/carouselImages'
+import { pricingImages } from '@/lib/carouselImages'
 
 const packages = [
   { name: 'Royal Package', price: '15,000,000' },
@@ -19,15 +19,15 @@ export default function Pricing() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-32 sm:pt-24 md:pt-20">
+      <main className="pt-0">
         <BackgroundCarousel
-          images={backgroundImages}
+          images={pricingImages}
           interval={5000}
-          className="h-64 sm:h-80 md:h-96"
+          className="h-[90vh] sm:h-[80vh] md:h-[110vh] lg:h-[140vh] xl:h-[140vh]"
         >
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Pricing Packages</h1>
-            <p className="text-lg sm:text-xl">Transparent pricing for our comprehensive funeral services</p>
+          <div className="text-center bg-black/60 p-6 rounded-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">Pricing Packages</h1>
+            <p className="text-lg sm:text-xl text-white">Transparent pricing for our comprehensive funeral services</p>
           </div>
         </BackgroundCarousel>
 

@@ -1,7 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
-import { backgroundImages } from '@/lib/carouselImages'
+import { contactImages } from '@/lib/carouselImages'
 import { redirect } from 'next/navigation'
 
 async function submitContactForm(formData: FormData) {
@@ -44,15 +44,15 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-32 sm:pt-24 md:pt-20">
+      <main className="pt-0">
         <BackgroundCarousel
-          images={backgroundImages}
+          images={contactImages}
           interval={5000}
-          className="h-64 sm:h-80 md:h-96"
+          className="h-[90vh] sm:h-[80vh] md:h-[110vh] lg:h-[140vh] xl:h-[140vh]"
         >
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-            <p className="text-lg sm:text-xl">We're here to help you during this difficult time</p>
+          <div className="text-center bg-black/60 p-6 rounded-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">Contact Us</h1>
+            <p className="text-lg sm:text-xl text-white">We're here to help you during this difficult time</p>
           </div>
         </BackgroundCarousel>
 

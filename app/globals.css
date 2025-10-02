@@ -1,3 +1,17 @@
+a*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -78,6 +92,17 @@
 
   /* Hardware acceleration */
   .gpu-accelerated {
+/* Fade in up animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
     transform: translateZ(0);
     backface-visibility: hidden;
     perspective: 1000px;
@@ -92,4 +117,45 @@
   .animate-slide {
     animation: slide 30s linear infinite;
   }
+
+  @media (max-width: 640px) {
+    .animate-slide {
+      animation-duration: 20s;
+    }
+  }
+
+  @media (orientation: landscape) {
+    header {
+      position: static !important;
+    }
+  }
+
+  @media (orientation: landscape) {
+    .landscape-hero {
+      height: 160vh !important;
+    }
+  }
+}
+/* Fade in left animation */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade in right animation */
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }

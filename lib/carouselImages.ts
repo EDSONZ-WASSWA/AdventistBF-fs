@@ -32,24 +32,63 @@ export const backgroundImages = [
 
 // Alternative smaller set for faster loading
 export const heroImages = [
-  '/pictures/abf home.jpg',
-  '/pictures/funeral home.jpg',
-  '/pictures/serving team ABF.jpg',
-  '/pictures/team.jpg'
+  '/pics/candle.jpg',
+  '/pics/flower.jpg',
+  '/pics/church.jpg',
+  '/pics/onthegrave.jpg'
 ]
 
 // Service-specific images
 export const serviceImages = [
-  '/pictures/funeral home.jpg',
-  '/pictures/funeral 1.jpg',
-  '/pictures/funeral 2.jpg',
-  '/pictures/team with car.jpg'
+  '/pics/transport.jpg',
+  '/pics/coffen.jpg',
+  '/pics/grieve support.jpg',
+  '/pics/band.jpg'
 ]
 
 // About page images
 export const aboutImages = [
-  '/pictures/serving team ABF.jpg',
-  '/pictures/team.jpg',
-  '/pictures/team with car.jpg',
-  '/pictures/home prep.jpg'
+  '/pics/burial.jpg',
+  '/pics/candles.jpg',
+  '/pics/inchurch.jpg',
+  '/pics/coffen2.jpg'
+]
+
+// Pricing page images
+export const pricingImages = [
+  '/pics/onthegrave.jpg',
+  '/pics/moving2grave.jpg',
+  '/pics/casketinchurch.jpg',
+  '/pics/greivesupport2.jpg'
+]
+
+// Contact page images
+export const contactImages = [
+  '/pics/flower.jpg',
+  '/pics/onthegrave.jpg',
+  '/pics/grievinginchurch.jpg',
+]
+
+// Ekijja Omanyi page images
+export const ekijjaImages = [
+  '/pics/flower.jpg',
+  '/pics/moving2grave.jpg',
+  '/pics/transport.jpg',
+  '/pics/church.jpg'
+]
+
+// Gallery page images
+export const galleryImages = [
+  '/pics/grieving.jpg',
+  '/pics/onthegrave.jpg',
+  '/pics/church.jpg',
+  '/pics/coffen.jpg'
+]
+
+// Obituaries page images
+export const obituariesImages = [
+  '/pics/candles.jpg',
+  '/pics/burial.jpg',
+  '/pics/grieving.jpg',
+  '/pics/inspection.jpg'
 ]

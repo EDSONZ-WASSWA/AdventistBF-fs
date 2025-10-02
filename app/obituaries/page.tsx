@@ -1,7 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
-import { backgroundImages } from '@/lib/carouselImages'
+import { obituariesImages } from '@/lib/carouselImages'
 import { redirect } from 'next/navigation'
 
 async function submitObituaryForm(formData: FormData) {
@@ -42,32 +42,60 @@ async function submitObituaryForm(formData: FormData) {
 
 const obituaries = [
   {
-    name: 'John Doe',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80',
+    name: 'Emily',
+    image: '/obituaries/emilly.obt.jpg',
     description: 'Beloved father and grandfather, passed away peacefully on October 1, 2023 at the age of 78. John was a devoted family man who loved spending time with his grandchildren and working in his garden.',
     survivors: 'Survived by his wife Mary, children Sarah and Michael, and grandchildren Emma and James.',
     services: 'Services will be held at ABF Funeral Home on October 5, 2023 at 2:00 PM.'
   },
   {
-    name: 'Jane Smith',
-    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80',
+    name: 'Mrs Womeri',
+    image: '/obituaries/womeri.obt.jpg',
     description: 'Dedicated teacher and community member, passed away on September 28, 2023 at the age of 65. Jane touched the lives of countless students during her 30-year teaching career.',
     survivors: 'Survived by her husband Robert, daughter Lisa, and son David.',
     services: 'A memorial service will be held at First Presbyterian Church on October 8, 2023 at 11:00 AM.'
   },
   {
-    name: 'Robert Johnson',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80',
+    name: 'Pr. Eridad Mwanje Mwesigwa',
+    image: '/obituaries/preridad.obt.jpg',
     description: 'Devoted husband, father, and longtime community volunteer, passed away on September 25, 2023 at the age of 72. Robert was known for his generosity and commitment to helping others.',
     survivors: 'Survived by his wife Susan, children Mark and Jennifer, and four grandchildren.',
     services: 'Services will be held at ABF Funeral Home on October 2, 2023 at 1:00 PM.'
   },
   {
-    name: 'Mary Williams',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80',
+    name: 'Erivanson Namuddu Mayanja',
+    image: '/obituaries/namudu2.obt.jpg',
     description: 'Loving mother and grandmother, passed away on September 20, 2023 at the age of 85. Mary was known for her warm smile, generous spirit, and delicious homemade pies.',
     survivors: 'Survived by her children Thomas and Elizabeth, and grandchildren Sarah and Michael.',
     services: 'A celebration of life will be held at her home on October 1, 2023 at 3:00 PM.'
+  },
+  {
+    name: 'Akurut Sarah',
+    image: '/obituaries/sarah.obt.jpg',
+    description: 'Dedicated community leader and businessman, passed away on September 15, 2023 at the age of 68. David was a pillar of the community, known for his philanthropy and leadership in local organizations.',
+    survivors: 'Survived by his wife Linda, sons James and Robert, and daughter Emily.',
+    services: 'Services will be held at ABF Funeral Home on September 25, 2023 at 11:00 AM.'
+  },
+  {
+    name: 'Nyanziru Emmanuel',
+    image: '/obituaries/emma.obt.jpg',
+    description: 'Beloved nurse and healthcare worker, passed away on September 10, 2023 at the age of 62. Patricia dedicated her life to caring for others, both in her professional career and personal life.',
+    survivors: 'Survived by her husband Mark, children Anna and Christopher, and two grandchildren.',
+    services: 'A memorial service will be held at St. Mary\'s Church on September 20, 2023 at 2:00 PM.'
+  },
+  {
+    name: 'Atim Merisa',
+    image: '/obituaries/merisa.obt.jpg',
+    description: 'Talented artist and creative spirit, passed away on September 5, 2023 at the age of 55. Michael\'s paintings brought joy to many and his creativity inspired those around him.',
+    survivors: 'Survived by his partner Sarah, son Daniel, and extended family.',
+    services: 'An art memorial exhibition and service will be held at the Community Art Center on September 15, 2023 at 4:00 PM.'
+  },
+  {
+    name: 'Bahemuka Luka',
+    image: '/obituaries/luka.obt.jpg',
+    description: 'Passionate educator and lifelong learner, passed away on August 30, 2023 at the age of 70. Susan inspired generations of students with her love of knowledge and dedication to education.',
+    survivors: 'Survived by her children Maria and Jose, and grandchildren Isabella and Carlos.',
+    services: 'Services will be held at the University Chapel on September 10, 2023 at 10:00 AM.'
   }
 ]
 
@@ -76,15 +104,15 @@ export default function Obituaries() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-32 sm:pt-24 md:pt-20">
+      <main className="pt-0">
         <BackgroundCarousel
-          images={backgroundImages}
+          images={obituariesImages}
           interval={5000}
-          className="h-64 sm:h-80 md:h-96"
+          className="h-[90vh] sm:h-[80vh] md:h-[110vh] lg:h-[140vh] xl:h-[140vh]"
         >
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Obituaries & Tributes</h1>
-            <p className="text-lg sm:text-xl">Honoring the lives and memories of our loved ones</p>
+          <div className="text-center bg-black/60 p-6 rounded-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">Obituaries & Tributes</h1>
+            <p className="text-lg sm:text-xl text-white">Honoring the lives and memories of our loved ones</p>
           </div>
         </BackgroundCarousel>
 
@@ -97,24 +125,25 @@ export default function Obituaries() {
                   <div className="md:flex">
                     <div className="md:w-1/3 p-4 flex items-center justify-center">
                       <div className="relative group">
-                        <img
-                          src={obituary.image}
-                          alt={`Memorial for ${obituary.name}`}
-                          className="w-full h-48 md:h-56 object-cover rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300 border-2 border-gray-100 group-hover:border-primary/20"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          In Loving Memory
+                        <div className="relative overflow-hidden rounded-full shadow-lg group-hover:shadow-2xl transition-all duration-500 border-4 border-white group-hover:border-primary/30">
+                          <img
+                            src={obituary.image}
+                            alt={`Memorial for ${obituary.name}`}
+                            className="w-48 h-48 md:w-56 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-800 shadow-lg">
+                              In Loving Memory
+                            </div>
+                          </div>
+                          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-4 bg-gradient-to-t from-gray-300 to-transparent rounded-full opacity-50"></div>
                         </div>
                       </div>
                     </div>
                     <div className="md:w-2/3 p-6">
                       <h3 className="text-2xl font-bold mb-4 text-secondary hover:text-primary transition-colors duration-300">{obituary.name}</h3>
                       <p className="text-gray-700 mb-4 text-sm leading-relaxed">{obituary.description}</p>
-                      <div className="border-t border-gray-200 pt-4">
-                        <p className="text-gray-600 mb-2 text-sm"><strong className="text-secondary">Survived by:</strong> {obituary.survivors}</p>
-                        <p className="text-gray-600 text-sm"><strong className="text-secondary">Services:</strong> {obituary.services}</p>
-                      </div>
                     </div>
                   </div>
                 </div>

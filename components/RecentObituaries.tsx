@@ -1,18 +1,18 @@
 const obituaries = [
   {
-    name: 'John Doe',
-    date: 'October 1, 2023',
+    name: 'Bahemuka Luke',
+    date: '',
     description: 'Beloved father and grandfather, passed away peacefully.'
   },
   {
-    name: 'Jane Smith',
+    name: 'Atim Merisa',
     date: 'September 28, 2023',
-    description: 'Dedicated teacher and community member, remembered for her kindness.'
+    description: 'Dedicated  and committed member, remembered for her kindness.'
   },
   {
-    name: 'Robert Johnson',
+    name: 'Pr.Eridad Mwange Mwesigwa',
     date: 'September 25, 2023',
-    description: 'Devoted husband, father, and longtime community volunteer.'
+    description: 'Devoted Pastor, father, and longtime community volunteer.'
   }
 ]
 
