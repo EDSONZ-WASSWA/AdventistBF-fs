@@ -1,45 +1,11 @@
+'use client'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
 import { ekijjaImages } from '@/lib/carouselImages'
-import { redirect } from 'next/navigation'
-
-async function submitForm(formData: FormData) {
-    'use server'
-
-    const fullName = formData.get('full-name') as string
-    const phone = formData.get('phone') as string
-    const email = formData.get('email') as string
-    const preferredPlan = formData.get('preferred-plan') as string
-    const paymentMethod = formData.get('payment-method') as string
-    const additionalInfo = formData.get('additional-info') as string
-
-    const web3FormData = new FormData()
-    web3FormData.append('access_key', process.env.WEB3FORMS_ACCESS_KEY!)
-    web3FormData.append('to', 'enockkalumba213@gmail.com')
-    web3FormData.append('from', 'noreply@abf-funeral-services.com')
-    web3FormData.append('subject', 'New Ekijja Omanyi Application')
-    web3FormData.append('full-name', fullName)
-    web3FormData.append('phone', phone)
-    web3FormData.append('email', email)
-    web3FormData.append('preferred-plan', preferredPlan)
-    web3FormData.append('payment-method', paymentMethod)
-    web3FormData.append('additional-info', additionalInfo)
-
-    const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: web3FormData
-    })
-
-    const result = await response.json();
-
-    if (!result.success) {
-        throw new Error('Failed to submit application')
-    }
-
-    // Form will clear automatically
-}
+import { useScrollAnimation } from '@/lib/useScrollAnimation'
+import { submitForm } from '@/lib/actions'
 
 const membershipSteps = [
   'Study the funding packages and choose your favourite.',
@@ -78,6 +44,12 @@ const benefits = [
 ]
 
 export default function EkijjaOmanyi() {
+  const whatRef = useScrollAnimation()
+  const howRef = useScrollAnimation()
+  const savingRef = useScrollAnimation()
+  const benefitsRef = useScrollAnimation()
+  const paymentRef = useScrollAnimation()
+  const joinRef = useScrollAnimation()
   return (
     <div className="min-h-screen">
       <Header />
@@ -93,7 +65,7 @@ export default function EkijjaOmanyi() {
           </div>
         </BackgroundCarousel>
 
-        <section className="py-20">
+        <section ref={whatRef} className="py-20 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>What is Ekijja Omanyi saving Scheme?</h2>
             <div className="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
@@ -108,7 +80,7 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section ref={howRef} className="py-20 bg-gray-50 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>How to Become a Member of Ekijja Omanyi Saving Scheme</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -151,7 +123,7 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section className="py-20">
+        <section ref={savingRef} className="py-20 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Saving Plan Options</h2>
 
@@ -180,7 +152,7 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section ref={benefitsRef} className="py-20 bg-gray-50 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Benefits of Ekijja Omanyo</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -194,7 +166,7 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section ref={paymentRef} className="py-20 bg-gray-50 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Online Payment Options</h2>
             <p className="text-center text-lg text-gray-600 mb-12">Make your payments securely and conveniently through our various payment channels.</p>
@@ -258,7 +230,7 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section id="saving-application" className="py-20 bg-gray-50">
+        <section id="saving-application" ref={joinRef} className="py-20 bg-gray-50 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-8" style={{color: '#1030e6'}}>Join Ekijja Omanyo Today</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">

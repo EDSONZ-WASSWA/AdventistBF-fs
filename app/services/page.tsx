@@ -1,7 +1,9 @@
+'use client'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
 import { serviceImages } from '@/lib/carouselImages'
+import { useScrollAnimation } from '@/lib/useScrollAnimation'
 
 const services = [
   {
@@ -52,6 +54,8 @@ const services = [
 ]
 
 export default function Services() {
+  const servicesRef = useScrollAnimation()
+  const comprehensiveRef = useScrollAnimation()
   return (
     <div className="min-h-screen">
       <Header />
@@ -67,7 +71,7 @@ export default function Services() {
           </div>
         </BackgroundCarousel>
 
-        <section className="section-padding stable-layout">
+        <section ref={servicesRef} className="section-padding stable-layout fade-in-up">
           <div className="container">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {services.map((service, index) => (
@@ -89,7 +93,7 @@ export default function Services() {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <section ref={comprehensiveRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>Comprehensive Funeral Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

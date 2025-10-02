@@ -1,8 +1,10 @@
+'use client'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
 import { pricingImages } from '@/lib/carouselImages'
+import { useScrollAnimation } from '@/lib/useScrollAnimation'
 
 const packages = [
   { name: 'Royal Package', price: '15,000,000' },
@@ -16,6 +18,8 @@ const packages = [
 ]
 
 export default function Pricing() {
+  const packagesRef = useScrollAnimation()
+  const paymentRef = useScrollAnimation()
   return (
     <div className="min-h-screen">
       <Header />
@@ -31,7 +35,7 @@ export default function Pricing() {
           </div>
         </BackgroundCarousel>
 
-        <section className="py-20">
+        <section ref={packagesRef} className="py-20 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-8" style={{color: '#1030e6'}}>Service Packages</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
@@ -73,7 +77,7 @@ export default function Pricing() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section ref={paymentRef} className="py-20 bg-gray-50 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Payment Information</h2>
             <p className="text-center text-lg text-gray-600 mb-12">Make your payments securely and conveniently through our various payment channels.</p>

@@ -1,10 +1,17 @@
+'use client'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
 import { aboutImages } from '@/lib/carouselImages'
 import Image from 'next/image'
+import { useScrollAnimation } from '@/lib/useScrollAnimation'
 
 export default function About() {
+  const storyRef = useScrollAnimation()
+  const missionRef = useScrollAnimation()
+  const visionRef = useScrollAnimation()
+  const valuesRef = useScrollAnimation()
+  const teamRef = useScrollAnimation()
   return (
     <div className="min-h-screen">
       <Header />
@@ -20,7 +27,7 @@ export default function About() {
           </div>
         </BackgroundCarousel>
 
-        <section className="py-20">
+        <section ref={storyRef} className="py-20 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>Our Story</h2>
             <div className="max-w-4xl mx-auto text-lg leading-relaxed" style={{color: '#C59560'}}>
@@ -36,7 +43,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-100">
+        <section ref={missionRef} className="py-20 bg-gray-100 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>Our Mission</h2>
             <div className="max-w-4xl mx-auto text-center">
@@ -47,7 +54,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-20">
+        <section ref={visionRef} className="py-20 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>Our Vision</h2>
             <div className="max-w-4xl mx-auto text-center">
@@ -56,7 +63,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-100">
+        <section ref={valuesRef} className="py-20 bg-gray-100 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Our Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -88,7 +95,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-20">
+        <section ref={teamRef} className="py-20 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Our Team</h2>
             <p className="text-center text-lg mb-12 max-w-3xl mx-auto" style={{color: '#C59560'}}>

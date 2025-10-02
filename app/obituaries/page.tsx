@@ -1,44 +1,10 @@
+'use client'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
 import { obituariesImages } from '@/lib/carouselImages'
-import { redirect } from 'next/navigation'
-
-async function submitObituaryForm(formData: FormData) {
-    'use server'
-
-    const name = formData.get('name') as string
-    const age = formData.get('age') as string
-    const dateOfDeath = formData.get('date-of-death') as string
-    const obituaryText = formData.get('obituary-text') as string
-    const submitterName = formData.get('submitter-name') as string
-    const submitterEmail = formData.get('submitter-email') as string
-
-    const web3FormData = new FormData()
-    web3FormData.append('access_key', process.env.WEB3FORMS_ACCESS_KEY!)
-    web3FormData.append('to', 'enockkalumba213@gmail.com')
-    web3FormData.append('from', 'noreply@abf-funeral-services.com')
-    web3FormData.append('subject', 'New Obituary Submission')
-    web3FormData.append('name', name)
-    web3FormData.append('age', age)
-    web3FormData.append('date-of-death', dateOfDeath)
-    web3FormData.append('obituary-text', obituaryText)
-    web3FormData.append('submitter-name', submitterName)
-    web3FormData.append('submitter-email', submitterEmail)
-
-    const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: web3FormData
-    })
-
-    const result = await response.json()
-
-    if (!result.success) {
-        throw new Error('Failed to submit obituary')
-    }
-
-    // Form will clear automatically
-}
+import { useScrollAnimation } from '@/lib/useScrollAnimation'
+import { submitObituaryForm } from '@/lib/actions'
 
 const obituaries = [
   {
@@ -100,7 +66,8 @@ const obituaries = [
 ]
 
 export default function Obituaries() {
-
+  const recentRef = useScrollAnimation()
+  const submitRef = useScrollAnimation()
   return (
     <div className="min-h-screen">
       <Header />
@@ -116,7 +83,7 @@ export default function Obituaries() {
           </div>
         </BackgroundCarousel>
 
-        <section className="py-20">
+        <section ref={recentRef} className="py-20 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Recent Obituaries</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -152,7 +119,7 @@ export default function Obituaries() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section ref={submitRef} className="py-20 bg-gray-50 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Submit an Obituary</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
