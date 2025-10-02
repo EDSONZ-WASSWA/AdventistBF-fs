@@ -17,6 +17,10 @@ export default function BackgroundCarousel({
 }: BackgroundCarouselProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
+  if (!images || images.length === 0) {
+    return null
+  }
+
   // Auto-cycling effect - works on all devices
   useEffect(() => {
     const timer = setInterval(() => {
@@ -34,7 +38,7 @@ export default function BackgroundCarousel({
       style={{
         backgroundImage: `url("${images[currentImageIndex]}")`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center top',
         backgroundRepeat: 'no-repeat',
         transition: 'background-image 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
         willChange: 'background-image',
@@ -55,7 +59,7 @@ export default function BackgroundCarousel({
         ))}
       </div>
 
-      <div className="absolute inset-0 bg-black bg-opacity-50 smooth-transition"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent smooth-transition"></div>
 
       {/* Carousel indicators - Visible on all devices */}
       <div className="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">

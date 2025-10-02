@@ -1,8 +1,10 @@
+'use client'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
-import { backgroundImages } from '@/lib/carouselImages'
+import { pricingImages } from '@/lib/carouselImages'
+import { useScrollAnimation } from '@/lib/useScrollAnimation'
 
 const packages = [
   { name: 'Royal Package', price: '15,000,000' },
@@ -16,22 +18,24 @@ const packages = [
 ]
 
 export default function Pricing() {
+  const packagesRef = useScrollAnimation()
+  const paymentRef = useScrollAnimation()
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-32 sm:pt-24 md:pt-20">
+      <main className="pt-0">
         <BackgroundCarousel
-          images={backgroundImages}
+          images={pricingImages}
           interval={5000}
-          className="h-64 sm:h-80 md:h-96"
+          className="h-[90vh] sm:h-[80vh] md:h-[110vh] lg:h-[140vh] xl:h-[140vh]"
         >
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Pricing Packages</h1>
-            <p className="text-lg sm:text-xl">Transparent pricing for our comprehensive funeral services</p>
+          <div className="text-center bg-black/60 p-6 rounded-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">Pricing Packages</h1>
+            <p className="text-lg sm:text-xl text-white">Transparent pricing for our comprehensive funeral services</p>
           </div>
         </BackgroundCarousel>
 
-        <section className="py-20">
+        <section ref={packagesRef} className="py-20 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-8" style={{color: '#1030e6'}}>Service Packages</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
@@ -73,7 +77,7 @@ export default function Pricing() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section ref={paymentRef} className="py-20 bg-gray-50 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Payment Information</h2>
             <p className="text-center text-lg text-gray-600 mb-12">Make your payments securely and conveniently through our various payment channels.</p>

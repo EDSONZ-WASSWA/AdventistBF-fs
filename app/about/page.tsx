@@ -1,25 +1,33 @@
+'use client'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
 import { aboutImages } from '@/lib/carouselImages'
+import Image from 'next/image'
+import { useScrollAnimation } from '@/lib/useScrollAnimation'
 
 export default function About() {
+  const storyRef = useScrollAnimation()
+  const missionRef = useScrollAnimation()
+  const visionRef = useScrollAnimation()
+  const valuesRef = useScrollAnimation()
+  const teamRef = useScrollAnimation()
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-32 sm:pt-24 md:pt-20">
+      <main className="pt-0">
         <BackgroundCarousel
           images={aboutImages}
           interval={5000}
-          className="h-64 sm:h-80 md:h-96"
+          className="h-[90vh] sm:h-[80vh] md:h-[110vh] lg:h-[140vh] xl:h-[140vh]"
         >
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">About ABF Funeral Services</h1>
-            <p className="text-lg sm:text-xl">Compassionate care for over 5 years</p>
+          <div className="text-center bg-black/60 p-6 rounded-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">About ABF Funeral Services</h1>
+            <p className="text-lg sm:text-xl text-white">Compassionate care for over 5 years</p>
           </div>
         </BackgroundCarousel>
 
-        <section className="py-20">
+        <section ref={storyRef} className="py-20 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>Our Story</h2>
             <div className="max-w-4xl mx-auto text-lg leading-relaxed" style={{color: '#C59560'}}>
@@ -35,7 +43,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-100">
+        <section ref={missionRef} className="py-20 bg-gray-100 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>Our Mission</h2>
             <div className="max-w-4xl mx-auto text-center">
@@ -46,7 +54,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-20">
+        <section ref={visionRef} className="py-20 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>Our Vision</h2>
             <div className="max-w-4xl mx-auto text-center">
@@ -55,7 +63,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-100">
+        <section ref={valuesRef} className="py-20 bg-gray-100 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Our Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -87,44 +95,47 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-20">
+        <section ref={teamRef} className="py-20 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Our Team</h2>
             <p className="text-center text-lg mb-12 max-w-3xl mx-auto" style={{color: '#C59560'}}>
               Our dedicated team of leaders and members work together to provide compassionate and comprehensive funeral services.
             </p>
-            <div className="overflow-hidden">
-              <div className="flex animate-slide flex-nowrap">
+            <div className="">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
                 {[
-                  { position: 'Chairman', name: 'RTN.STEPHEN KABUYE' },
-                  { position: 'Vice Chairman', name: 'MR. MUGAMBA MATTIAS', image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Secretary', name: 'MS.FAITH NABUKEERA', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Treasurer', name: 'MRS. STELLA MIIRO', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Director of Company Projects', name: 'DR.DALTON SSEGAWA', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Asst. Director of Company Projects', name: 'MR.LUGGYA BENON', image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Legal Affairs', name: 'MRS.EVELYN NAMISANGO NUWAGABA', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Public Relations', name: 'ENG. VALENTINE KATABIRA', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Spiritual Affairs', name: 'MRS.MARY ELSA TAMALE', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Gender, Social & Welfare', name: 'MR.MAWEJJE PAUL', image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Asst. Gender, Social & Welfare', name: 'MRS.RUTH MIREMBE SEMPA', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Member', name: 'ENG. HERBERT SSERUNKUUMA', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Member', name: 'ENG. GODFREY KATANGAZA ', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Member', name: 'ENG. JOSIAH SSERUJOGI', image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Member', name: 'MR. JJAGWE GEOFFREY NKALUBO', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' },
-                  { position: 'Member', name: 'MR.MBUGA JOSEPH', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80' }
-                ].concat([
-                  { position: 'Public Relations', name: 'Lisa Anderson' },
-                  { position: 'Spiritual Affairs', name: 'James Taylor' },
-                  { position: 'Gender, Social & Welfare', name: 'Emma Martinez' },
-                  { position: 'Asst. Gender, Social & Welfare', name: 'Christopher Lee' },
-                  { position: 'Member', name: 'Amanda Garcia' },
-                  { position: 'Member', name: 'Daniel Rodriguez' },
-                  { position: 'Member', name: 'Olivia Lopez' },
-                  { position: 'Member', name: 'William Gonzalez' },
-                  { position: 'Member', name: 'Sophia Hernandez' }
-                ]).map((member, index) => (
+                  { position: 'Chairman', name: 'RTN.STEPHEN KABUYE', image: '/team/kabuye.exec.jpg' },
+                  { position: 'Vice Chairman', name: 'MR. MUGAMBA MATTIAS', image: '/team/mugamba.exec.jpg' },
+                  { position: 'Secretary', name: 'MS.FAITH NABUKEERA', image: '/team/secretary.exec1.jpg' },
+                  { position: 'Treasurer', name: 'MRS. STELLA MIIRO', image: '/team/stella.exec.jpg' },
+                  { position: 'Director of Company Projects', name: 'DR.DALTON SSEGAWA', image: '/team/dalton.exec.jpg' },
+                  { position: 'Asst. Director of Company Projects', name: 'MR.LUGGYA BENON', image: '/team/eldlujja.exec.jpg' },
+                  // { position: 'Legal Affairs', name: 'MRS.EVELYN NAMISANGO NUWAGABA', image: '/pictures/car%20with%20team.jpg' },
+                  // { position: 'Public Relations', name: 'ENG. VALENTINE KATABIRA', image: '/pictures/team%20with%20car.jpg' },
+                  // { position: 'Spiritual Affairs', name: 'MRS.MARY ELSA TAMALE', image: '/pictures/team%20with%20casket.jpg' },
+                  // { position: 'Gender, Social & Welfare', name: 'MR.MAWEJJE PAUL', image: '/pictures/team%20in%20tent.jpg' },
+                  // { position: 'Asst. Gender, Social & Welfare', name: 'MRS.RUTH MIREMBE SEMPA', image: '/pictures/team.jpg' },
+                  // { position: 'Member', name: 'ENG. HERBERT SSERUNKUUMA', image: '/pictures/team1.jpg' },
+                  // { position: 'Member', name: 'ENG. GODFREY KATANGAZA ', image: '/pictures/team3.jpg' },
+                  // { position: 'Member', name: 'ENG. JOSIAH SSERUJOGI', image: '/pictures/teamcar.jpg' },
+                  // { position: 'Member', name: 'MR. JJAGWE GEOFFREY NKALUBO', image: '/pictures/teamcasket1.jpg' },
+                  // { position: 'Member', name: 'MR.MBUGA JOSEPH', image: '/pictures/serving%20team%20ABF.jpg' }
+                ]
+                .map((member, index) => (
                   <div key={index} className="flex-shrink-0 w-64 mx-4 bg-gradient-to-br from-white to-gray-50 rounded-lg shadow-lg p-6 border border-gray-200">
-                    <h3 className="text-xl font-bold mb-2 text-secondary">{member.name}</h3>
+                    {member.image && (
+                      <div className="w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          width={144}
+                          height={144}
+                          className="object-cover"
+                          style={{objectPosition: member.image.includes('secretary.exec1.jpg') ? 'center 20%' : 'center center'}}
+                        />
+                      </div>
+                    )}
+                    <h3 className="text-lg font-bold mb-2 text-secondary">{member.name}</h3>
                     <p className="text-gray-600 font-semibold">{member.position}</p>
                   </div>
                 ))}

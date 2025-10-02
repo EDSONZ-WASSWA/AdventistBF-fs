@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="min-h-screen stable-layout">
       <Header />
-      <main className="gpu-accelerated pt-32 sm:pt-24 md:pt-20">
+      <main className="gpu-accelerated pt-0">
         <Hero />
         <Services />
         <Testimonials />

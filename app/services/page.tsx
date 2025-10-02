@@ -1,7 +1,9 @@
+'use client'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
 import { serviceImages } from '@/lib/carouselImages'
+import { useScrollAnimation } from '@/lib/useScrollAnimation'
 
 const services = [
   {
@@ -10,9 +12,9 @@ const services = [
     image: '/pictures/funeral home.jpg'
   },
   {
-    title: 'Cremation Services',
-    description: 'Personalized cremation options with memorial services and compassionate care.',
-    image: '/pictures/funeral 1.jpg'
+    title: 'Body Storage',
+    description: 'Secure and respectful body storage services with proper care and dignity.',
+    image: '/pictures/bodystorage.jpg'
   },
   {
     title: 'Memorial Services',
@@ -32,27 +34,44 @@ const services = [
   {
     title: 'Floral Arrangements',
     description: 'Beautiful floral arrangements for services and memorials.',
-    image: '/pictures/arrangements.jpg'
+    image: '/pictures/casket.jpg'
+  },
+  {
+    title: 'Funeral Home',
+    description: 'Comprehensive funeral services with care and respect.',
+    image: '/pictures/funeralhome1.jpg'
+  },
+  {
+    title: 'Body Preparation',
+    description: 'Professional body preparation services with dignity and care.',
+    image: '/pictures/bodyprep.jpg'
+  },
+  {
+    title: 'Pole Bearers',
+    description: 'Professional pole bearers for dignified funeral processions.',
+    image: '/pictures/teamcasket1.jpg'
   }
 ]
 
 export default function Services() {
+  const servicesRef = useScrollAnimation()
+  const comprehensiveRef = useScrollAnimation()
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-32 sm:pt-24 md:pt-20">
+      <main className="pt-0">
         <BackgroundCarousel
           images={serviceImages}
           interval={5000}
-          className="h-64 sm:h-80 md:h-96"
+          className="h-[90vh] sm:h-[80vh] md:h-[110vh] lg:h-[140vh] xl:h-[140vh]"
         >
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-            <p className="text-lg sm:text-xl">Comprehensive funeral and memorial services tailored to your needs</p>
+          <div className="text-center bg-black/60 p-6 rounded-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">Our Services</h1>
+            <p className="text-lg sm:text-xl text-white">Comprehensive funeral and memorial services tailored to your needs</p>
           </div>
         </BackgroundCarousel>
 
-        <section className="section-padding stable-layout">
+        <section ref={servicesRef} className="section-padding stable-layout fade-in-up">
           <div className="container">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {services.map((service, index) => (
@@ -74,7 +93,7 @@ export default function Services() {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <section ref={comprehensiveRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>Comprehensive Funeral Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
