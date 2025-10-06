@@ -109,7 +109,7 @@ export default function About() {
                   { position: 'Secretary', name: 'MS.FAITH NABUKEERA', image: '/team/secretary.exec1.jpg' },
                   { position: 'Treasurer', name: 'MRS. STELLA MIIRO', image: '/team/stella.exec.jpg' },
                   { position: 'Director of Company Projects', name: 'DR.DALTON SSEGAWA', image: '/team/dalton.exec.jpg' },
-                  { position: 'Asst. Director of Company Projects', name: 'MR.LUGGYA BENON', image: '/team/eldlujja.exec.jpg' },
+                  { position: 'Asst. Director of Company Projects', name: 'DR.LUGGYA BENON', image: '/team/eldlujja.exec.jpg' },
                   // { position: 'Legal Affairs', name: 'MRS.EVELYN NAMISANGO NUWAGABA', image: '/pictures/car%20with%20team.jpg' },
                   // { position: 'Public Relations', name: 'ENG. VALENTINE KATABIRA', image: '/pictures/team%20with%20car.jpg' },
                   // { position: 'Spiritual Affairs', name: 'MRS.MARY ELSA TAMALE', image: '/pictures/team%20with%20casket.jpg' },
