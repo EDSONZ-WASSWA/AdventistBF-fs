@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-700 mt-4 pt-3 text-center">
           <p className="text-xs">&copy; 2025 ABF Funeral Services. All rights reserved.</p>
-          <p className="text-sm mt-1 font-medium text-secondary">@enock-kalumba</p>
+          <p className="text-sm mt-1 font-medium text-secondary"></p>
         </div>
       </div>
     </footer>
