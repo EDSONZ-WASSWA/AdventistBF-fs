@@ -12,7 +12,7 @@ const packages = [
   { name: 'Classic Package', price: '5,000,000' },
   { name: 'Standard Package', price: '3,000,000' },
   { name: 'Basic Package', price: '2,400,000' },
-  { name: 'Mosleme Package', price: '2,000,000' },
+  { name: 'Moslem Package', price: '2,000,000' },
   { name: 'Professional Package', price: '1,800,000' },
   { name: 'Selected Items (Not Full Package)', price: '1,500,000' }
 ]
@@ -43,8 +43,8 @@ export default function Pricing() {
             </p>
 
             <div className="overflow-x-auto">
-              <table className="w-full bg-white shadow-lg rounded-lg overflow-hidden">
-                <thead className="bg-black text-white">
+              <table className="w-full bg-white shadow-lg rounded-lg overflow-hidden border border-blue-200 pulse-glow1">
+                <thead className="bg-blue-800 text-blue-50">
                   <tr>
                     <th className="px-6 py-4 text-left text-lg font-semibold">Package</th>
                     <th className="px-6 py-4 text-left text-lg font-semibold">Charges</th>
@@ -52,8 +52,8 @@ export default function Pricing() {
                 </thead>
                 <tbody>
                   {packages.map((pkg, index) => (
-                    <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                      <td className="px-6 py-4 font-semibold text-secondary">{pkg.name}</td>
+                    <tr key={index} className={index % 2 === 0 ? 'bg-blue-50' : 'bg-blue-80'}>
+                      <td className="px-6 py-4 font-semibold text-secondary ">{pkg.name}</td>
                       <td className="px-6 py-4 font-bold text-black">{pkg.price}</td>
                     </tr>
                   ))}
@@ -66,10 +66,10 @@ export default function Pricing() {
               <p className="text-lg text-gray-600 mb-8">All packages can be customized to meet your specific needs and preferences.</p>
               <p className="text-lg text-gray-600 mb-8">Additional services and arrangements are available upon request.</p>
               <div className="space-x-4">
-                <Link href="/contact" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300 inline-block">
+                <Link href="/contact" className="bg-primary text-white px-8 py-3 rounded-md pulse-glow1 inline-block card-hover">
                   Contact Us for More Information
                 </Link>
-                <Link href="/ekijja-omanyi" className="bg-secondary text-white px-8 py-3 rounded-md hover:bg-secondary-dark transition-colors duration-300 inline-block">
+                <Link href="/ekijja-omanyi" className="bg-secondary text-white px-8 py-3 rounded-md pulse-glow1  inline-block card-hover">
                   View Payment Options
                 </Link>
               </div>
@@ -77,16 +77,16 @@ export default function Pricing() {
           </div>
         </section>
 
-        <section ref={paymentRef} className="py-20 bg-gray-50 fade-in-up">
+        <section ref={paymentRef} className="py-20  fade-in-up" style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Payment Information</h2>
             <p className="text-center text-lg text-gray-600 mb-12">Make your payments securely and conveniently through our various payment channels.</p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-6 rounded-lg shadow-lg card-hover border border-blue-200">
                 <h3 className="text-xl font-bold mb-4 text-secondary">Mobile Money Payment</h3>
                 <p className="text-gray-600 mb-4">Instant payments via mobile money</p>
-                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg shadow-md border border-green-200">
+                <div className=" rounded-lg shadow-md border border-blue-200" style={{backgroundColor:'#E6F7FF'}}>
                   <p className="font-semibold text-base mb-4 text-primary">📱 Mobile Money Details:</p>
                   <ul className="list-disc list-inside space-y-1 text-sm">
                     <li>MTN Mobile Money (*165*3#)</li>
@@ -99,10 +99,10 @@ export default function Pricing() {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-6 rounded-lg shadow-lg card-hover border border-blue-200">
                 <h3 className="text-xl font-bold mb-4 text-secondary">Bank Transfer</h3>
                 <p className="text-gray-600 mb-4">Direct bank transfers for larger amounts</p>
-                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg shadow-md border border-blue-200">
+                <div className=" p-6 rounded-lg shadow-md border border-blue-200" style={{backgroundColor:'#E6F7FF'}}>
                   <p className="font-semibold text-base mb-4 text-primary">🏦 Bank Details:</p>
                   <div className="space-y-2">
                     <p className="text-sm"><span className="font-medium text-gray-700">BANK:</span> <span className="text-secondary">CENTENARY BANK – ENTEBBE RD BRANCH</span></p>
@@ -112,10 +112,10 @@ export default function Pricing() {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-6 rounded-lg shadow-lg card-hover border border-blue-200">
                 <h3 className="text-xl font-bold mb-4 text-secondary">Cash Payment</h3>
                 <p className="text-gray-600 mb-4">Visit our office for cash payments</p>
-                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg shadow-md border border-yellow-200">
+                <div className=" p-6 rounded-lg shadow-md border border-blue-200" style={{backgroundColor:'#E6F7FF'}}>
                   <p className="font-semibold text-base mb-4 text-primary">💰 Cash Payment Details:</p>
                   <div className="space-y-2">
                     <p className="text-sm"><span className="font-medium text-gray-700">Office Hours:</span></p>
@@ -128,7 +128,7 @@ export default function Pricing() {
               </div>
             </div>
 
-            <div className="mt-16 bg-yellow-50 border border-yellow-200 rounded-lg p-8 text-center">
+            <div className="mt-16 rounded-lg p-8 text-center border border-blue-200">
               <h3 className="text-2xl font-bold text-yellow-800 mb-4">Payment Confirmation</h3>
               <p className="text-lg mb-4">After making any payment, please send confirmation to:</p>
               <div className="space-x-4">

@@ -72,7 +72,7 @@ export default function Gallery() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {galleryImages.map((image, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border border-blue-200">
                   <img
                     src={image.src}
                     alt={image.alt}
@@ -90,7 +90,7 @@ export default function Gallery() {
           </div>
         </section>
 
-        <section ref={facilitiesRef} className="py-20 bg-gray-50 fade-in-up">
+        <section ref={facilitiesRef} className="py-20  fade-in-up" style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-4xl font-bold mb-8" style={{color: '#1030e6'}}>Our Facilities & Services</h2>
             <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
@@ -99,7 +99,7 @@ export default function Gallery() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-              <div className="bg-white p-8 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-8 rounded-lg shadow-lg border border-blue-200 card-hover">
                 <h3 className="text-2xl font-bold mb-4 text-secondary">Funeral Home</h3>
                 <p className="text-gray-600 mb-4">A comfortable and dignified space for visitations and memorial services.</p>
                 <ul className="text-left text-gray-600 space-y-2">
@@ -110,7 +110,7 @@ export default function Gallery() {
                 </ul>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-8 rounded-lg shadow-lg border-blue-200 card-hover">
                 <h3 className="text-2xl font-bold mb-4 text-secondary">Transportation</h3>
                 <p className="text-gray-600 mb-4">Professional and respectful transportation services for all occasions.</p>
                 <ul className="text-left text-gray-600 space-y-2">
@@ -121,7 +121,7 @@ export default function Gallery() {
                 </ul>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-8 rounded-lg shadow-lg border-blue-200 card-hover">
                 <h3 className="text-2xl font-bold mb-4 text-secondary">Cemetery Services</h3>
                 <p className="text-gray-600 mb-4">Beautiful and well-maintained cemetery facilities for final arrangements.</p>
                 <ul className="text-left text-gray-600 space-y-2">

@@ -27,8 +27,8 @@ export default function About() {
           </div>
         </BackgroundCarousel>
 
-        <section ref={storyRef} className="py-20 fade-in-up">
-          <div className="container mx-auto px-4">
+        <section ref={storyRef} className="py-20 fade-in-up ">
+          <div className="container mx-auto px-4 bg-blue-95 rounded-lg pulse-glow1 ">
             <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>Our Story</h2>
             <div className="max-w-4xl mx-auto text-lg leading-relaxed" style={{color: '#C59560'}}>
               <p className="mb-6">
@@ -43,10 +43,10 @@ export default function About() {
           </div>
         </section>
 
-        <section ref={missionRef} className="py-20 bg-gray-100 fade-in-up">
+        <section ref={missionRef} className="py-20 bg-blue-50 fade-in-up  rounded-lg " style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>Our Mission</h2>
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="max-w-4xl mx-auto text-center bg-blue-50">
               <p className="text-2xl " style={{color: '#C59560'}}>To promote funeral events that glorify God in all aspects  </p>
               <p className='text-2xl 'style={{color: '#C59560'}}>2corinthians 9:11</p>
               <p style={{color: '#C59560'}}> "You will be enriched in every way so that you can be generous on every occasion, and through us your generosity will result in thanksgiving to God."</p>
@@ -55,7 +55,7 @@ export default function About() {
         </section>
 
         <section ref={visionRef} className="py-20 fade-in-up">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4  rounded-lg pulse-glow1 bg-blue-50">
             <h2 className="text-4xl font-bold text-center mb-12" style={{color: '#1030e6'}}>Our Vision</h2>
             <div className="max-w-4xl mx-auto text-center">
               <p style={{color: '#C59560'}}>Being Economically and Spiritually Sound</p>
@@ -63,31 +63,31 @@ export default function About() {
           </div>
         </section>
 
-        <section ref={valuesRef} className="py-20 bg-gray-100 fade-in-up">
+        <section ref={valuesRef} className="py-20 bg-blue-50 fade-in-up rounded-lg ">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Our Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-4 text-secondary">Integrity</h3>
+              <div className="text-center rounded-lg pulse-glow1 card-hover border border-blue-200">
+                <h3 className="text-2xl font-bold mb-4 text-secondary ">Integrity</h3>
                 <p className="text-gray-600">We conduct our business with honesty, transparency, and ethical practices in all our dealings.</p>
               </div>
-              <div className="text-center">
+              <div className="text-center rounded-lg pulse-glow1 card-hover border border-blue-200">
                 <h3 className="text-2xl font-bold mb-4 text-secondary">Humility</h3>
                 <p className="text-gray-600">We serve with humility, recognizing that every family deserves compassionate and respectful care.</p>
               </div>
-              <div className="text-center">
+              <div className="text-center rounded-lg pulse-glow1 card-hover border border-blue-200">
                 <h3 className="text-2xl font-bold mb-4 text-secondary">Teamwork</h3>
                 <p className="text-gray-600">We work collaboratively as a team to provide comprehensive support and care to every family.</p>
               </div>
-              <div className="text-center">
+              <div className="text-center rounded-lg pulse-glow1 card-hover border border-blue-200">
                 <h3 className="text-2xl font-bold mb-4 text-secondary">Empathy</h3>
                 <p className="text-gray-600">We understand and share the feelings of those we serve, providing comfort during difficult times.</p>
               </div>
-              <div className="text-center">
+              <div className="text-center rounded-lg pulse-glow1 card-hover border border-blue-200">
                 <h3 className="text-2xl font-bold mb-4 text-secondary">Personalized Service</h3>
                 <p className="text-gray-600">We tailor our services to meet the unique needs and preferences of each family.</p>
               </div>
-              <div className="text-center">
+              <div className="text-center rounded-lg pulse-glow1 card-hover border border-blue-200">
                 <h3 className="text-2xl font-bold mb-4 text-secondary">Glorification of God</h3>
                 <p className="text-gray-600">We strive to glorify God in all our services, reflecting His love and compassion.</p>
               </div>
@@ -122,7 +122,7 @@ export default function About() {
                   // { position: 'Member', name: 'MR.MBUGA JOSEPH', image: '/pictures/serving%20team%20ABF.jpg' }
                 ]
                 .map((member, index) => (
-                  <div key={index} className="flex-shrink-0 w-64 mx-4 bg-gradient-to-br from-white to-gray-50 rounded-lg shadow-lg p-6 border border-gray-200">
+                  <div key={index} className="flex-shrink-0 w-64 mx-4 bg-blue-50 from-white to-gray-50 rounded-lg shadow-lg p-6 border border-blue-200 card-hover pulse-glow1">
                     {member.image && (
                       <div className="w-36 h-36 mx-auto mb-4 rounded-full overflow-hidden">
                         <Image

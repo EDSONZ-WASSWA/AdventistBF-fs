@@ -80,7 +80,7 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section ref={howRef} className="py-20 bg-gray-50 fade-in-up">
+        <section ref={howRef} className="py-20 fade-in-up pulse-glow1"  style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>How to Become a Member of Ekijja Omanyi Saving Scheme</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -89,14 +89,14 @@ export default function EkijjaOmanyi() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {membershipSteps.map((step, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
+                <div key={index} className="bg-blue-50 p-6 rounded-lg shadow-lg card-hover border border-blue-200">
                   <h3 className="text-xl font-bold mb-4 text-secondary">Step {index + 1}:</h3>
                   <p className="text-gray-600">{step}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-16 bg-white p-8 rounded-lg shadow-lg">
+            <div className="mt-16 bg-blue-50 p-8 rounded-lg shadow-lg border border-blue-200">
               <h3 className="text-2xl font-bold text-center mb-8 text-secondary">Required Documents</h3>
               <ul className="list-disc list-inside space-y-2 text-gray-700 max-w-2xl mx-auto">
                 <li>Valid National ID or Passport</li>
@@ -112,10 +112,10 @@ export default function EkijjaOmanyi() {
               <h3 className="text-2xl font-bold mb-6" style={{color: '#1030e6'}}>Ready to Join?</h3>
               <p className="text-lg text-gray-600 mb-8">Take the first step towards securing your family's future. Contact us today to start your membership application.</p>
               <div className="space-x-4">
-                <Link href="#saving-application" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300 inline-block">
+                <Link href="#saving-application" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300 inline-block card-hover">
                   Apply Online
                 </Link>
-                <Link href="https://wa.me/256776514528" target="_blank" rel="noopener noreferrer" className="bg-secondary text-white px-8 py-3 rounded-md hover:bg-secondary-dark transition-colors duration-300 inline-block">
+                <Link href="https://wa.me/256776514528" target="_blank" rel="noopener noreferrer" className="bg-secondary text-white px-8 py-3 rounded-md hover:bg-secondary-dark transition-colors duration-300 inline-block card-hover">
                   Contact Us
                 </Link>
               </div>
@@ -129,7 +129,7 @@ export default function EkijjaOmanyi() {
 
             <div className="overflow-x-auto">
               <table className="w-full bg-white shadow-lg rounded-lg overflow-hidden min-w-[600px]">
-                <thead className="bg-black text-white">
+                <thead className="bg-blue-800 text-blue-50">
                   <tr>
                     <th className="px-2 py-2 sm:px-6 sm:py-4 text-left text-sm sm:text-lg font-semibold">Plan Type</th>
                     <th className="px-2 py-2 sm:px-6 sm:py-4 text-left text-sm sm:text-lg font-semibold">Duration</th>
@@ -139,7 +139,7 @@ export default function EkijjaOmanyi() {
                 </thead>
                 <tbody>
                   {savingPlans.map((plan, index) => (
-                    <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                    <tr key={index} className={index % 2 === 0 ? 'bg-blue-50' : 'bg-blue-80'}>
                       <td className="px-2 py-2 sm:px-6 sm:py-4 font-semibold text-secondary text-sm sm:text-base">{plan.name}</td>
                       <td className="px-2 py-2 sm:px-6 sm:py-4 text-sm sm:text-base">{plan.duration}</td>
                       <td className="px-2 py-2 sm:px-6 sm:py-4 text-sm sm:text-base">{plan.monthly}</td>
@@ -152,12 +152,12 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section ref={benefitsRef} className="py-20 bg-gray-50 fade-in-up">
+        <section ref={benefitsRef} className="py-20 bg-blue-50 fade-in-up">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Benefits of Ekijja Omanyo</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {benefits.map((benefit, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center">
+                <div key={index} className="bg-blue-50 p-6 rounded-lg shadow-lg text-center border border-blue-200 card-hover">
                   <h3 className="text-xl font-bold mb-4 text-secondary">{benefit.title}</h3>
                   <p className="text-gray-600">{benefit.description}</p>
                 </div>
@@ -166,16 +166,16 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section ref={paymentRef} className="py-20 bg-gray-50 fade-in-up">
+        <section ref={paymentRef} className="py-20 fade-in-up" style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-16" style={{color: '#1030e6'}}>Online Payment Options</h2>
             <p className="text-center text-lg text-gray-600 mb-12">Make your payments securely and conveniently through our various payment channels.</p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className=" bg-blue-50 p-6 rounded-lg shadow-lg card-hover border border-blue-200">
                 <h3 className="text-xl font-bold mb-4 text-secondary">Mobile Money Payment</h3>
                 <p className="text-gray-600 mb-4">Instant payments via mobile money</p>
-                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg shadow-md border border-green-200">
+                <div className=" p-6 rounded-lg shadow-md border border-blue-200" style={{backgroundColor:'#E6F7FF'}}>
                   <p className="font-semibold text-base mb-4 text-primary">📱 Mobile Money Details:</p>
                   <ul className="list-disc list-inside space-y-1 text-sm">
                     <li>MTN Mobile Money (*165*3#)</li>
@@ -188,10 +188,10 @@ export default function EkijjaOmanyi() {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-6 rounded-lg shadow-lg card-hover">
                 <h3 className="text-xl font-bold mb-4 text-secondary">Bank Transfer</h3>
                 <p className="text-gray-600 mb-4">Direct bank transfers for larger amounts</p>
-                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg shadow-md border border-blue-200">
+                <div className=" p-6 rounded-lg shadow-md border border-blue-200" style={{backgroundColor:'#E6F7FF'}}>
                   <p className="font-semibold text-base mb-4 text-primary">🏦 Bank Details:</p>
                   <div className="space-y-2">
                     <p className="text-sm"><span className="font-medium text-gray-700">BANK:</span> <span className="text-secondary">CENTENARY BANK – ENTEBBE RD BRANCH</span></p>
@@ -201,10 +201,10 @@ export default function EkijjaOmanyi() {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-lg">
+              <div className="bg-blue-50 p-6 rounded-lg shadow-lg card-hover">
                 <h3 className="text-xl font-bold mb-4 text-secondary">Cash Payment</h3>
                 <p className="text-gray-600 mb-4">Visit our office for cash payments</p>
-                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg shadow-md border border-yellow-200">
+                <div className=" p-6 rounded-lg shadow-md border border-blue-200" style={{backgroundColor:'#E6F7FF'}}>
                   <p className="font-semibold text-base mb-4 text-primary">💰 Cash Payment Details:</p>
                   <div className="space-y-2">
                     <p className="text-sm"><span className="font-medium text-gray-700">Office Hours:</span></p>
@@ -216,7 +216,7 @@ export default function EkijjaOmanyi() {
               </div>
             </div>
 
-            <div className="mt-16 bg-yellow-50 border border-yellow-200 rounded-lg p-8 text-center">
+            <div className="mt-16 bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
               <h3 className="text-2xl font-bold text-yellow-800 mb-4">Payment Confirmation</h3>
               <p className="text-lg mb-4">After making any payment, please send confirmation to:</p>
               <a href="https://wa.me/256776514528" target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white px-8 py-3 rounded-md hover:bg-green-600 transition-colors duration-300 inline-flex items-center mx-auto">
@@ -230,7 +230,7 @@ export default function EkijjaOmanyi() {
           </div>
         </section>
 
-        <section id="saving-application" ref={joinRef} className="py-20 bg-gray-50 fade-in-up">
+        <section id="saving-application" ref={joinRef} className="py-20  fade-in-up" style={{backgroundColor:'#E6F7FF'}}>
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-8" style={{color: '#1030e6'}}>Join Ekijja Omanyo Today</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -238,26 +238,26 @@ export default function EkijjaOmanyi() {
             </p>
 
             <div className="max-w-2xl mx-auto">
-              <form action={submitForm} className="bg-white p-8 rounded-lg shadow-lg space-y-6">
+              <form action={submitForm} className="bg-blue-50 p-8 rounded-lg shadow-lg space-y-6 border border-blue-300">
                 <div>
                   <label htmlFor="full-name" className="block text-sm font-medium text-gray-700 mb-2">Full Name:</label>
-                  <input type="text" id="full-name" name="full-name" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
+                  <input type="text" id="full-name" name="full-name" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
+                    <input type="tel" id="phone" name="phone" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address:</label>
-                    <input type="email" id="email" name="email" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
+                    <input type="email" id="email" name="email" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="preferred-plan" className="block text-sm font-medium text-gray-700 mb-2">Preferred Plan:</label>
-                  <select id="preferred-plan" name="preferred-plan" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                  <select id="preferred-plan" name="preferred-plan" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
                     <option value="">Select a plan</option>
                     <option value="royal">Royal Package (15,000,000)</option>
                     <option value="executive">Executive Package (8,000,000)</option>
@@ -272,7 +272,7 @@ export default function EkijjaOmanyi() {
 
                 <div>
                   <label htmlFor="payment-method" className="block text-sm font-medium text-gray-700 mb-2">Preferred Payment Method:</label>
-                  <select id="payment-method" name="payment-method" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                  <select id="payment-method" name="payment-method" required className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
                     <option value="">Select payment method</option>
                     <option value="mtn">MTN Mobile Money</option>
                     <option value="airtel">Airtel Money</option>
@@ -283,11 +283,11 @@ export default function EkijjaOmanyi() {
 
                 <div>
                   <label htmlFor="additional-info" className="block text-sm font-medium text-gray-700 mb-2">Additional Information:</label>
-                  <textarea id="additional-info" name="additional-info" rows={4} placeholder="Any questions or special requirements..." className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                  <textarea id="additional-info" name="additional-info" rows={4} placeholder="Any questions or special requirements..." className="w-full px-4 py-2 border border-blue-200 rounded-md focus:ring-1  focus:border-transparent"></textarea>
                 </div>
 
                 <div className="text-center">
-                  <button type="submit" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300">Apply Now</button>
+                  <button type="submit" className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary-dark transition-colors duration-300 card-hover">Apply Now</button>
                 </div>
               </form>
             </div>
