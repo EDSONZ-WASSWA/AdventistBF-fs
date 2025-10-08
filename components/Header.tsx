@@ -8,7 +8,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 text-black z-50 shadow-lg stable-layout gpu-accelerated" style={{ backgroundColor: '#0046FF' }}>
+    <header className="navbar-fixed text-white shadow-lg stable-layout gpu-accelerated " style={{ backgroundColor: '#0046FF' }}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4 prevent-cls">
            {/* Logo */}
@@ -21,11 +21,11 @@ export default function Header() {
                 className="rounded-full mr-2 sm:mr-3 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
               />
               <div className="flex flex-col">
-               <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: '#F5F1DC', letterSpacing: '0.1rem sm:0.25rem md:0.5rem lg:0.75rem' }}>ABF</span>
-               <h2 className="text-base sm:text-lg md:text-xl font-bold tracking-wide" style={{ color: '#C59560' }}>
+               <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: '#E6F7FF', letterSpacing: '0.1rem sm:0.25rem md:0.5rem lg:0.75rem' }}>ABF</span>
+               <h2 className="text-base sm:text-lg md:text-xl font-bold tracking-wide text-secondary" >
                  Funeral Services
                </h2>
-               <p className="text-xs sm:text-sm md:text-base font-medium italic" style={{ color: '#F5F1DC', marginTop: '1px sm:2px md:3px' }}>
+               <p className="text-xs sm:text-sm md:text-base font-medium italic" style={{ color: '#E6F7FF', marginTop: '1px sm:2px md:3px' }}>
                  Reflecting God in Service
                </p>
              </div>
@@ -33,28 +33,28 @@ export default function Header() {
 
            {/* Desktop Navigation */}
            <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="hover:text-[#E2A16F] hover:scale-105 transition-all duration-300 font-bold" style={{color: '#F5F1DC'}}>
+            <Link href="/" className="nav-text-gradient font-bold" >
               Home
             </Link>
-            <Link href="/about" className="hover:text-[#E2A16F] hover:scale-105 transition-all duration-300 font-bold" style={{color: '#F5F1DC'}}>
+            <Link href="/about" className="nav-text-gradient font-bold" >
               About Us
             </Link>
-            <Link href="/services" className="hover:text-[#E2A16F] hover:scale-105 transition-all duration-300 font-bold" style={{color: '#F5F1DC'}}>
+            <Link href="/services" className="nav-text-gradient font-bold">
               Services
             </Link>
-            <Link href="/pricing" className="hover:text-[#E2A16F] hover:scale-105 transition-all duration-300 font-bold" style={{color: '#F5F1DC'}}>
+            <Link href="/pricing" className="nav-text-gradient font-bold">
               Pricing
             </Link>
-            <Link href="/ekijja-omanyi" className="hover:text-[#E2A16F] hover:scale-105 transition-all duration-300 font-bold" style={{color: '#F5F1DC'}}>
+            <Link href="/ekijja-omanyi" className="nav-text-gradient font-bold" >
               Ekijja Omanyi
             </Link>
-            <Link href="/obituaries" className="hover:text-[#E2A16F] hover:scale-105 transition-all duration-300 font-bold" style={{color: '#F5F1DC'}}>
+            <Link href="/obituaries" className="nav-text-gradient font-bold" >
               Obituaries
             </Link>
-            <Link href="/gallery" className="hover:text-[#E2A16F] hover:scale-105 transition-all duration-300 font-bold" style={{color: '#F5F1DC'}}>
+            <Link href="/gallery" className="nav-text-gradient font-bold" >
               Gallery
             </Link>
-            <Link href="/contact" className="hover:text-[#E2A16F] hover:scale-105 transition-all duration-300 font-bold" style={{color: '#F5F1DC'}}>
+            <Link href="/contact" className="nav-text-gradient font-bold" >
               Contact
             </Link>
           </nav>
