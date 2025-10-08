@@ -36,7 +36,7 @@ const services = [
     const sectionRef = useScrollAnimation()
     const titleRef = useScrollAnimation()
   return (
-    <section ref={sectionRef} className="py-20 bg-gray-50 fade-in-up">
+    <section ref={sectionRef} className="py-20  fade-in-up" style={{backgroundColor:'#E6F7FF'}}>
       <div className="container mx-auto px-4">
         <h2  ref={titleRef} className="text-4xl font-bold text-center mb-16 fade-in-up" style={{color: '#1030e6'}}>
           Our Services
@@ -45,7 +45,7 @@ const services = [
         {services.map((service, index) => {
             const serviceRef = useScrollAnimation()
             return (
-              <div key={index} ref={serviceRef} className={`bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 fade-in-up ${index % 2 === 0 ? 'fade-in-left' : 'fade-in-right'}`}>
+              <div key={index} ref={serviceRef} className={` border border-bg-blue-900 card-hover pulse-glow1 bg-blue-95 rounded-lg shadow-lg overflow-hidden  fade-in-up ${index % 2 === 0 ? 'fade-in-left' : 'fade-in-right'}`}>
                 <img
                   src={service.image}
                   alt={service.title}

@@ -1,4 +1,5 @@
 export default function Footer() {
+  const year = new Date().getFullYear()
   return (
     <footer className="text-white py-6" style={{ backgroundColor: '#44444E' }}>
       <div className="container mx-auto px-4">
@@ -12,11 +13,11 @@ export default function Footer() {
                 style={{ backgroundColor: '#808080' }}
               />
               <div className="text-left">
-                <div className="text-2xl font-bold mb-1" style={{ color: '#0BA6DF', letterSpacing: '0.5rem' }}>ABF</div>
+                <div className="text-2xl font-bold mb-1" style={{ color: '#E6F7FF', letterSpacing: '0.5rem' }}>ABF</div>
                 <h3 className="text-sm font-bold text-secondary mb-1">
                   Funeral Services
                 </h3>
-                <p className="text-xs font-medium italic" style={{ color: '#0BA6DF' }}>
+                <p className="text-xs font-medium italic" style={{ color: '#E6F7FF' }}>
                   Reflecting God in Service
                 </p>
               </div>
@@ -75,8 +76,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-700 mt-4 pt-3 text-center">
-          <p className="text-xs">&copy; 2025 ABF Funeral Services. All rights reserved.</p>
-          <p className="text-sm mt-1 font-medium text-secondary"></p>
+          <p className="text-xs">&copy; {year} ABF Funeral Services. All rights reserved.</p>
+          <p className="text-sm mt-1 font-medium text-secondary">@enock-kalumba && @edson-wasswa</p>
         </div>
       </div>
     </footer>
